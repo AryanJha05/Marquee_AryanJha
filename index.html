@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marquee Training</title>
+    <style>
+        table,td,th,tr{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!-- Anchor tag -->
@@ -18,32 +25,72 @@
     </div><hr>
 
     <div>
-        <table style="border: 1px solid black; ">
-            <thead >
+        <!-- Formating table  -->
+    
+        <table>
+            <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Role</th>
-                    <th>Salary</th>
+                    <th colspan="7">Time Table for Primary Student</th>
+                </tr>
+                <tr>
+                    <th>Time:</th>
+                    <th>8:00am-8:30am</th>
+                    <th>8:30am-9:30am</th>
+                    <th>9:30am-10:30am</th>
+                    <th>10:30am-11:00am</th>
+                    <th>11:00am-12:00am</th>
+                    <th>12:00am-1:00pm</th>
                 </tr>
             </thead>
-
             <tbody>
                 <tr>
-                    <td>Aryan Jha</td>
-                    <td>Web Developer</td>
-                    <td>50000</td>
+                    <td>Monday</td>
+                    <th rowspan="6">Assembly</th>
+                    <td>Math</td>
+                    <td>Social Science</td>
+                    <th rowspan="6">Break</th>
+                    <td>Computer</td>
+                    <td>English</td>
                 </tr>
                 <tr>
-                    <td>Mahipal Singh</td>
-                    <td>Software Engineer</td>
-                    <td>60000</td>
+                    <td>Tuesday</td>
+                    <td>Science</td>
+                    <td>Hindi</td>
+                    <td>Math</td>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>Maths</td>
+                    <td>Creative Arts</td>
+                    <td>Computer</td>
+                    <td>Social Science</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>Computer</td>
+                    <td>Hindi</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>Maths</td>
+                    <td>English</td>
+                    <td>Creative Arts</td>
+                    <td>Social Science</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>Social Science</td>
+                    <td>Hindi</td>
+                    <td>Maths</td>
+                    <td>Science</td>
                 </tr>
             </tbody>
-
             <tfoot>
                 <tr>
-                    <td colspan="2"><b>Total Salary</b></td>
-                    <td><b>110000</b></td>
+                    <th colspan="7">This time table will be effective from : 19/05/2026</th>
                 </tr>
             </tfoot>
         </table>
