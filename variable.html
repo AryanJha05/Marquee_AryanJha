@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boxes Layout</title>
+
+    <style>
+      :root {
+        --box-size: 100px;
+        --border: 2px solid black;
+        --radius: 10px;
+        --circle-radius: 50%;
+        --gap: 10px;
+
+        --container-width: 900px;
+        --container-height: 430px;
+        --container-display: flex;
+        --container-direction: column;
+        --container-gap: 20px;
+        --container-padding: 20px;
+        --container-margin-top: 50px;
+        --container-position: relative;
+        --container-left: 20%;
+
+        --rect-height: 120px;
+        --rect-width: 100%;
+        --rect-background: lightblue;
+
+        --layer2-gap: 130px;
+        --justify-content: center;
+        --align-items: center;
+
+        --sq-width: 225px;
+        --sq-height: 120px;
+        --sw-background: lightcoral;
+
+        --circle-size: 125px;
+        --circle-display: inline-block;
+        --circle-background: lightseagreen;
+
+        --rect2-width: 83%;
+        --rect2-height: 120px;
+        --rect2-background: lightgreen;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ALL BOXES */
+      .box {
+        width: var(--box-size);
+        height: var(--box-size);
+        border: var(--border);
+        border-radius: var(--radius);
+        display: inline-block;
+        margin: var(--gap);
+      }
+
+      /* COLORS */
+      .red {
+        background: red;
+      }
+      .orange {
+        background: orange;
+      }
+      .yellow {
+        background: yellow;
+      }
+      .green {
+        background: green;
+      }
+      .blue {
+        background: blue;
+      }
+      .indigo {
+        background: indigo;
+      }
+      .violet {
+        background: violet;
+      }
+      .pink {
+        background: pink;
+      }
+      .cyan {
+        background: cyan;
+      }
+      .magenta {
+        background: magenta;
+      }
+      .brown {
+        background: brown;
+      }
+      .gray {
+        background: gray;
+      }
+      .black {
+        background: black;
+      }
+      .white {
+        background: #f7fff9;
+      }
+
+      /* CONTAINER */
+      .container {
+        width: var(--container-width);
+        height: var(--container-height);
+        border: var(--border);
+
+        display: var(--container-display);
+        flex-direction: var(--container-direction);
+        gap: var(--container-gap);
+
+        position: var(--container-position);
+        left: var(--container-left);
+
+        padding: var(--container-padding);
+        margin-top: var(--container-margin-top);
+      }
+
+      .rect1 {
+        width: var(--rect-width);
+        height: var(--rect-height);
+        background: var(--rect-background);
+        border: var(--border);
+        border-radius: var(--radius);
+      }
+
+      .layer2 {
+        display: var(--container-display);
+        gap: var(--layer2-gap);
+        justify-content: var(--justify-content);
+        align-items: var(--align-items);
+      }
+      .layer3 {
+        display: var(--container-display);
+        gap: var(--container-gap);
+        align-items: var(--align-items);
+      }
+
+      .sq {
+        width: var(--sq-width);
+        height: var(--sq-height);
+        background: var(--sw-background);
+        border: var(--border);
+        border-radius: var(--radius);
+      }
+
+      .circle {
+        width: var(--circle-size);
+        height: var(--circle-size);
+        display: var(--circle-display);
+        background: var(--circle-background);
+        border: var(--border);
+        border-radius: var(--circle-radius);
+      }
+
+      .rect2 {
+        width: var(--rect2-width);
+        height: var(--rect2-height);
+        background: var(--rect2-background);
+        border: var(--border);
+        border-radius: var(--radius);
+      }
+
+      .blue-box {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        left: 130px;
+        z-index: 1; /* Appears behind the red box */
+        background: rgba(0, 0, 255, 0.625);
+      }
+      .red-box {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        left:50px;
+        z-index: 2; /* Appears in front of the blue box */
+        background: rgba(255, 0, 0, 0.653);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- COLOR BOXES -->
+
+    <div class="box red"></div>
+    <div class="box orange"></div>
+    <div class="box yellow"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+    <div class="box indigo"></div>
+    <div class="box violet"></div>
+    <div class="box pink"></div>
+    <div class="box cyan"></div>
+    <div class="box magenta"></div>
+    <div class="box brown"></div>
+    <div class="box gray"></div>
+    <div class="box black"></div>
+    <div class="box white"></div>
+
+    <hr style="margin: 50px 0" />
+
+    <!-- MAIN CONTAINER -->
+
+    <div class="container">
+      <div class="rect1"></div>
+
+      <div class="layer2">
+        <div class="sq"></div>
+        <div class="sq"></div>
+        <div class="sq"></div>
+      </div>
+      <div class="layer3">
+        <div class="circle"></div>
+        <div class="rect2"></div>
+      </div>
+    </div>
+
+    <hr style="margin: 50px 0" />
+
+    <div class="blue-box"></div>
+    <div class="red-box"></div>
+
+
+    <hr style="margin: 300px 0" />
+  </body>
+</html>
