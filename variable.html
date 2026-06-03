@@ -165,22 +165,147 @@
         border-radius: var(--radius);
       }
 
-      .blue-box {
+
+      .container2 {
+        width: 90vw;
+        height: 600px;
+      }
+      .part1 {
+        width: 50em;
+        height: 530px;
+        display: flex;
+        position: absolute;
+        left: 100px;
+      }
+      .part2 {
+        width: 50em;
+        height: 530px;
+        display: flex;
+        position: absolute;
+        left: 30%;
+      }
+
+      .slide {
         width: 150px;
         height: 150px;
-        position: absolute;
-        left: 130px;
-        z-index: 1; /* Appears behind the red box */
-        background: rgba(0, 0, 255, 0.625);
+        position: relative;
+        border: var(--border);
+        border-radius: var(--radius);
+        box-shadow: 7.5px 7.5px rgba(0, 0, 0, 0.455);
       }
-      .red-box {
-        width: 150px;
-        height: 150px;
-        position: absolute;
-        left:50px;
-        z-index: 2; /* Appears in front of the blue box */
-        background: rgba(255, 0, 0, 0.653);
+      .slide:hover {
+        animation: rotate 5s linear infinite;
       }
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .s1 {
+        background: lightcoral;
+        z-index: 1;
+      }
+      .s2 {
+        top: 75px;
+        right: 75px;
+        background: lightseagreen;
+        z-index: 2;
+      }
+      .s3 {
+        top: 150px;
+        right: 150px;
+        background: lightblue;
+        z-index: 3;
+      }
+      .s4 {
+        top: 225px;
+        right: 225px;
+        background: lightgreen;
+        z-index: 4;
+      }
+      .s5 {
+        top: 300px;
+        right: 300px;
+        background: lightpink;
+        z-index: 5;
+      }
+      .s6 {
+        top: 375px;
+        right: 375px;
+        background: lightgray;
+        z-index: 6;
+      }
+
+      .s11 {
+        background: lightcoral;
+        z-index: 6;
+      }
+      .s22 {
+        top: 75px;
+        right: 75px;
+        background: lightseagreen;
+        z-index: 5;
+      }
+      .s33 {
+        top: 150px;
+        right: 150px;
+        background: lightblue;
+        z-index: 4;
+      }
+      .s44 {
+        top: 225px;
+        right: 225px;
+        background: lightgreen;
+        z-index: 3;
+      }
+      .s55 {
+        top: 300px;
+        right: 300px;
+        background: lightpink;
+        z-index: 2;
+      }
+      .s66 {
+        top: 375px;
+        right: 375px;
+        background: lightgray;
+        z-index: 1;
+      }
+
+      .container3{
+        width: 400px;
+        height: 200px;
+        display: inline-block;
+        position: relative;
+        left: 10%;
+      }
+
+      .b1{
+        left:100px;
+        z-index: 4;
+        background: lightcoral;
+      }
+      .b2{
+        bottom: 75px;
+        z-index: 3;
+        background: lightseagreen;
+      }
+      .b3{
+        bottom: 225px;
+        left: 200px;
+        z-index: 3;
+        background: lightblue;
+      }
+      .b4{
+        bottom: 300px;
+        left: 100px;
+        z-index: 2;
+        background: lightgreen;
+      }
+
     </style>
   </head>
 
@@ -222,10 +347,36 @@
 
     <hr style="margin: 50px 0" />
 
-    <div class="blue-box"></div>
-    <div class="red-box"></div>
 
+   <div class="container2">
+     <div class="part1">
+      <div class="slide s1"></div>
+      <div class="slide s2"></div>
+      <div class="slide s3"></div>
+      <div class="slide s4"></div>
+      <div class="slide s5"></div>
+      <div class="slide s6"></div>
+    </div>
 
-    <hr style="margin: 300px 0" />
+    <div class="part2">
+      <div class="slide s11"></div>
+      <div class="slide s22"></div>
+      <div class="slide s33"></div>
+      <div class="slide s44"></div>
+      <div class="slide s55"></div>
+      <div class="slide s66"></div>
+    </div>
+   </div>
+
+   <hr style="margin: 10px 0" />
+
+   <div class="container3">
+    <div class="slide b1"></div>
+    <div class="slide b2"></div>
+    <div class="slide b3"></div>
+    <div class="slide b4"></div>
+
+    <hr style="margin: 10px 0" />
+   </div>
   </body>
 </html>
