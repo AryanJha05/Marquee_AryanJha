@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Robot, sans-serif;
+      }
+      .container1 {
+        width: 300px;
+        height: 300px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+
+      .box {
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      .rect1Big {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        background-color: red;
+      }
+      .rect1Small {
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+        background-color: blue;
+      }
+      .sq1Small {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        background-color: green;
+      }
+      .sq1Big {
+        grid-column: 1 / 3;
+        grid-row: 2 / 4;
+        background-color: yellow;
+      }
+
+      .container2 {
+        width: 600px;
+        height: 200px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 10px;
+        margin-top: 20px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+      .box1 {
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(229, 1, 255);
+        text-align: center;
+        color: white;
+      }
+
+      .container3 {
+        width: 600px;
+        height: 100px;
+        display: grid;
+        grid-gap: 10px;
+        margin-top: 20px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+
+      .fixed {
+        grid-template-columns: 100px 300px 181px;
+        border: 2px solid black;
+      }
+
+      .fr {
+        grid-template-columns: 1fr 2fr 1fr;
+        border: 2px solid black;
+      }
+
+      .repeat {
+        grid-template-columns: repeat(3, 1fr);
+        border: 2px solid black;
+      }
+
+      .mixed {
+        grid-template-columns: 200px 1fr auto;
+        border: 2px solid black;
+      }
+      .box2 {
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(245, 133, 35);
+        text-align: center;
+        color: white;
+      }
+
+      .container4 {
+        width: 1000px;
+        height: 700px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 10px;
+        margin: 20px 0px 20px 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: whitesmoke;
+      }
+      .boxCon4 {
+        border: 1px solid black;
+        text-align: center;
+        color: white;
+      }
+
+      .A {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        background-color: blue;
+      }
+      .B {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        background-color: purple;
+      }
+      .C {
+        /* grid-column: 4 / 5; */
+        /* grid-row: 1 / 2; */
+        background-color: rgb(14, 183, 14);
+      }
+      .D {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        background-color: rgb(229, 159, 30);
+      }
+      .E {
+        grid-column: 1 / -1;
+        /* grid-row: 3 / 4; */
+        background-color: rgb(12, 144, 188);
+      }
+      .F {
+        /* grid-column: 4 / 5; */
+        grid-row: 2 / 3;
+        background-color: white;
+        color: black;
+      }
+
+      .container5 {
+        width: 500px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 10px;
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+      .con5box1 {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+        background-color: red;
+      }
+      .con5box2 {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        background-color: green;
+      }
+      .con5box3 {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+        background-color: blue;
+      }
+      .con5box4 {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+        background-color: rgb(126, 243, 215);
+      }
+      .con5box5 {
+        grid-column: 4 / 5;
+        grid-row: 2 / 3;
+        background-color: rgb(185, 44, 147);
+      }
+      .con5box6 {
+        grid-column: 1 / -1;
+        background-color: rgb(92, 244, 158);
+      }
+
+      .container6 {
+        width: 600px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 10px;
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+      .con6box1 {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+        background-color: red;
+      }
+      .con6box2 {
+        grid-column: 1 / 3;
+        grid-row: 3 / 5;
+        background-color: rgb(54, 160, 84);
+      }
+      .con6box3 {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        background-color: rgb(36, 132, 129);
+      }
+      .con6box4 {
+        grid-column: 4 / 5;
+        grid-row: 1 / 3;
+        background-color: rgb(23, 77, 138);
+      }
+      .con6box5 {
+        background-color: rgb(162, 198, 43);
+      }
+      .con6box6 {
+        background-color: rgb(115, 109, 211);
+      }
+      .con6box7 {
+        background-color: rgb(142, 246, 230);
+      }
+      .con6box8 {
+        background-color: rgb(237, 131, 55);
+      }
+
+      /* HomeWork */
+      .Homework {
+        width: 600px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 10px;
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background: #0f1029;
+      }
+
+      /* Launch App */
+      .launchApp {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        background-color: rgb(31, 28, 71);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        color: rgb(167, 190, 224);
+      }
+
+      .launchApp .upper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 15px;
+        font-size: 9px;
+      }
+      .launchApp .upper .botton {
+        border-radius: 12px;
+        background-color: rgb(76, 76, 165);
+        padding: 1px 5px 1px 5px;
+      }
+
+      .launchApp .layerLogos {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .launchApp .layerLogos .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+
+        border-radius: 5px;
+        background-color: rgb(27, 55, 217);
+        margin: 5px 5px 0px 8px;
+      }
+
+      /* Weekly Likes */
+      .weeklyLikes {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        background-color: rgb(31, 28, 71);
+        border-radius: 20px;
+        color: rgb(167, 190, 224);
+      }
+      .weeklyLikes .upper {
+        font-size: 50px;
+        font-weight: bold;
+        font-family: Robot, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .weeklyLikes .bottom {
+        font-size: 10px;
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+      }
+
+      /* Weekly Viewers */
+      .weeklyViewers {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        background-color: rgb(31, 28, 71);
+        border-radius: 20px;
+        color: rgb(167, 190, 224);
+      }
+      .weeklyViewers .liveBotton {
+        display: flex;
+        justify-content: end;
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+      .weeklyViewers .liveBotton ul {
+        background-color: red;
+        padding: 5px 10px;
+        border-radius: 50px;
+        font-size: 5px;
+        font-weight: bold;
+      }
+      .weeklyViewers .upper {
+        font-size: 50px;
+        font-weight: bold;
+        font-family: Robot, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2px;
+      }
+      .weeklyViewers .bottom {
+        font-size: 10px;
+        font-family: "Times New Roman", Times, serif;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+      }
+
+      /* Active Users */
+      .activeUsers {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        background-color: rgb(31, 28, 71);
+        border-radius: 20px;
+        color: rgb(167, 190, 224);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .activeUsers .upper {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        margin-top: 13px;
+        font-size: 10px;
+      }
+      .activeUsers .upper .title {
+        font-weight: bold;
+      }
+      .activeUsers .upper .rate {
+        color: rgb(65, 197, 65);
+        font-weight: bold;
+      }
+      .activeUsers .bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 50px;
+      }
+      /* Design */
+      .Design {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        background-color: rgb(27, 55, 217);
+        border-radius: 20px;
+        color: rgb(167, 190, 224);
+        font-family: "Times New Roman", Times, serif;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Quote */
+      .quote {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        background-color: rgb(31, 28, 71);
+        border-radius: 20px;
+        color: rgb(167, 190, 224);
+        padding-top: 20px;
+        padding-right: 170px;
+        padding-left: 20px;
+        font-size: 15px;
+      }
+
+      /* Total Subscribers */
+      .totalSubscribers {
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+        background-color: rgb(167, 190, 224);
+        border-radius: 20px;
+      }
+
+      .totalSubscribers .top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 20px;
+        font-size: 12px;
+      }
+
+      .top .right {
+        color: green;
+        font-weight: bold;
+      }
+      .totalSubscribers .bottom {
+        display: flex;
+        justify-content: center;
+        margin-top: 70%;
+        font-size: 65px;
+      }
+
+      /* .container7 */
+      .container7 {
+        width: 600px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 10px;
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+
+      .cont7box1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        background-color: red;
+      }
+      .cont7box2 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        background-color: rgb(133, 215, 95);
+      }
+      .cont7box3 {
+        grid-column: 3 / 5;
+        grid-row: 1 / 2;
+        background-color: blue;
+      }
+      .cont7box4 {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        background-color: green;
+      }
+      .cont7box5 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        background-color: rgb(126, 243, 215);
+      }
+      .cont7box6 {
+        grid-column: 2 / 5;
+        grid-row: 3 / 4;
+        background-color: rgb(255, 182, 193);
+      }
+
+      /* Conatiner8 */
+      .container8 {
+        width: 600px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: 150px 1fr 150px;
+        grid-template-rows: 80px 1fr 80px;
+        grid-template-areas:
+          "header header header"
+          "sidebar main aside"
+          "footer footer footer";
+        grid-gap: 10px;
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: black;
+      }
+
+      .container8 .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: header;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 10px;
+      }
+      .container8 .sidebar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: sidebar;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 10px;
+      }
+      .container8 .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: main;
+        background-color: green;
+        color: white;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 10px;
+      }
+      .container8 .aside {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: aside;
+        background-color: orange;
+        color: white;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 10px;
+      }
+      .container8 .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: footer;
+        background-color: yellow;
+        color: white;
+        font-weight: bold;
+        border: 3px solid white;
+        border-radius: 10px;
+      }
+
+      /* Container9 */
+
+      .container9 {
+        width: 400px;
+        height: 600px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+
+      .cont9Box {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(240, 54, 54);
+      }
+      .cont9Box1,
+      .cont9Box4,
+      .cont9Box7,
+      .cont9Box10 {
+        justify-self: end;
+      }
+      .cont9Box2,
+      .cont9Box8 {
+        width: 100%;
+      }
+      .cont9Box2,
+      .cont9Box8 {
+        justify-self: center;
+      }
+      .cont9Box5,
+      .cont9Box11 {
+        visibility: hidden;
+      }
+
+      .cont9Box1,
+      .cont9Box2,
+      .cont9Box3 {
+        align-self: end;
+      }
+      .cont9Box4,
+      .cont9Box6 {
+        align-self: center;
+      }
+      .cont9Box4,
+      .cont9Box6,
+      .cont9Box7,
+      .cont9Box9 {
+        height: 100%;
+      }
+      .cont9Box2 {
+        border-top: 10px solid black;
+        border-bottom: 5px solid black;
+      }
+      .cont9Box8 {
+        border-top: 10px solid black;
+        border-bottom: 5px solid black;
+      }
+      .cont9Box4,
+      .cont9Box6,
+      .cont9Box7,
+      .cont9Box9 {
+        border-left: 5px solid black;
+        border-right: 5px solid black;
+      }
+
+      .cont9Box1 {
+        border-top: 10px solid black;
+        border-left: 5px solid black;
+        border-top-left-radius: 50px;
+      }
+      .cont9Box3 {
+        border-top: 10px solid black;
+        border-right: 5px solid black;
+        border-top-right-radius: 50px;
+      }
+      .cont9Box10 {
+        border-bottom: 10px solid black;
+        border-right: 5px solid black;
+        border-left: 5px solid black;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+      .cont9Box12 {
+        border-bottom: 10px solid black;
+        border-right: 5px solid black;
+        border-left: 5px solid black;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+
+      .cont9Box8 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: lightcyan;
+      }
+
+      /* Container10 */
+
+      .container10 {
+        width: 500px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+
+      .cont10Box1,
+      .cont10Box2,
+      .cont10Box3,
+      .cont10Box4,
+      .cont10Box5,
+      .cont10Box6,
+      .cont10Box7,
+      .cont10Box8,
+      .cont10Box9 {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(72, 250, 69);
+        border: 1px solid black;
+      }
+
+      .cont10Box1 {
+        justify-self: end;
+        align-self: end;
+      }
+      .cont10Box2 {
+        justify-self: center;
+        align-self: center;
+      }
+
+      .cont10Box3 {
+        justify-self: start;
+        align-self: end;
+      }
+
+      .cont10Box4 {
+        justify-self: start;
+        align-self: start;
+      }
+
+      .cont10Box5 {
+        justify-self: center;
+        align-self: end;
+      }
+      .cont10Box6 {
+        justify-self: end;
+        align-self: start;
+      }
+
+      .cont10Box7 {
+        justify-self: end;
+        align-self: center;
+      }
+
+      .cont10Box8,
+      .cont10Box9 {
+        justify-self: start;
+        align-self: center;
+      }
+
+      /* Container11 */
+
+      .container11 {
+        width: 500px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+
+      .cont11Box1,
+      .cont11Box2,
+      .cont11Box3,
+      .cont11Box4,
+      .cont11Box5,
+      .cont11Box6,
+      .cont11Box7,
+      .cont11Box8,
+      .cont11Box9 {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(201, 46, 196);
+        border: 1px solid black;
+      }
+
+      .cont11Box1 {
+        justify-self: start;
+        align-self: start;
+      }
+      .cont11Box2 {
+        justify-self: center;
+        align-self: end;
+      }
+      .cont11Box3 {
+        justify-self: end;
+        align-self: start;
+      }
+      .cont11Box4 {
+        justify-self: start;
+        align-self: center;
+      }
+      .cont11Box5 {
+        justify-self: center;
+        align-self: center;
+      }
+      .cont11Box6 {
+        justify-self: end;
+        align-self: center;
+      }
+      .cont11Box7 {
+        justify-self: start;
+        align-self: end;
+      }
+      .cont11Box8 {
+        justify-self: center;
+        align-self: start;
+      }
+      .cont11Box9 {
+        justify-self: end;
+        align-self: end;
+      }
+
+      /* Container12 */
+      .container12 {
+        width: 500px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+       /* Container13 */
+      .container13 {
+        width: 500px;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        margin-top: 20px;
+        margin-left: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: lightcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container1">
+      <div class="box rect1Big"></div>
+      <div class="box sq1Small"></div>
+      <div class="box sq1Big"></div>
+      <div class="box rect1Small"></div>
+    </div>
+
+    <div class="container2">
+      <div class="box1"><h1>1</h1></div>
+      <div class="box1"><h1>2</h1></div>
+      <div class="box1"><h1>3</h1></div>
+      <div class="box1"><h1>4</h1></div>
+      <div class="box1"><h1>5</h1></div>
+      <div class="box1"><h1>6</h1></div>
+    </div>
+
+    <h2>Fixed px</h2>
+    <div class="container3 fixed">
+      <div class="box2"><h1>100px</h1></div>
+      <div class="box2"><h1>300px</h1></div>
+      <div class="box2"><h1>181px</h1></div>
+    </div>
+
+    <h2>fr units (fractional)</h2>
+    <div class="container3 fr">
+      <div class="box2"><h1>1fr</h1></div>
+      <div class="box2"><h1>2fr</h1></div>
+      <div class="box2"><h1>1fr</h1></div>
+    </div>
+
+    <h2>repeat()</h2>
+    <div class="container3 repeat">
+      <div class="box2"></div>
+      <div class="box2"><h1>repeat(3, 1fr)</h1></div>
+      <div class="box2"></div>
+    </div>
+
+    <h2>Mixed units</h2>
+    <div class="container3 mixed">
+      <div class="box2"><h1>200px</h1></div>
+      <div class="box2"><h1>1fr</h1></div>
+      <div class="box2"><h1>auto</h1></div>
+    </div>
+    <br />
+    <hr />
+    <div class="container4">
+      <div class="boxCon4 A">
+        <h1>A</h1>
+        <h2>grid-column: 1 / 3</h2>
+        <h2>grid-row: 1 / 2</h2>
+      </div>
+      <div class="boxCon4 B">
+        <h1>B</h1>
+        <h2>grid-column: 3 / 4</h2>
+        <h2>grid-row: 1 / 3</h2>
+      </div>
+      <div class="boxCon4 C"><h1>C</h1></div>
+      <div class="boxCon4 D">
+        <h1>D</h1>
+        <h2>grid-column: 1 / 3</h2>
+        <h2>grid-row: 2 / 3</h2>
+      </div>
+      <div class="boxCon4 E">
+        <h1>E</h1>
+        <h2>grid-column: 1 / -1 (full width)</h2>
+      </div>
+      <div class="boxCon4 F">
+        <h1>F</h1>
+        <h2>grid-row: 2 / 3</h2>
+      </div>
+    </div>
+    <br />
+    <hr />
+
+    <div class="container5">
+      <div class="con5box1"></div>
+      <div class="con5box2"></div>
+      <div class="con5box3"></div>
+      <div class="con5box4"></div>
+      <div class="con5box5"></div>
+      <div class="con5box6"></div>
+    </div>
+    <br />
+    <hr />
+
+    <div class="container6">
+      <div class="con6box1"></div>
+      <div class="con6box2"></div>
+      <div class="con6box3"></div>
+      <div class="con6box4"></div>
+      <div class="con6box5"></div>
+      <div class="con6box6"></div>
+      <div class="con6box7"></div>
+      <div class="con6box8"></div>
+    </div>
+    <br />
+    <hr />
+
+    <!-- Homework -->
+    <div class="Homework">
+      <!-- launch app -->
+      <div class="launchApp">
+        <div class="upper">
+          <div class="title">A complete family of Apps</div>
+          <div class="botton">Launch App 🡢</div>
+        </div>
+        <div class="layerLogos">
+          <div class="logo linkedin">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+
+          <div class="logo youtube">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+
+          <div class="logo twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </div>
+
+          <div class="logo tiktok">
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+
+          <!-- <div class="logo facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+
+          <div class="logo instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Weekly Likes -->
+      <div class="weeklyLikes">
+        <div class="upper">25K</div>
+        <div class="bottom">Weekly Likes</div>
+      </div>
+
+      <!-- Weekly Viewers -->
+      <div class="weeklyViewers">
+        <div class="liveBotton">
+          <ul>
+            <li>LIVE</li>
+          </ul>
+        </div>
+        <div class="upper">50K</div>
+        <div class="bottom">Weekly Viewers</div>
+      </div>
+
+      <!-- Active Users -->
+      <div class="activeUsers">
+        <div class="upper">
+          <div class="title">Active Users</div>
+          <div class="rate">+154</div>
+        </div>
+        <div class="bottom">1,538</div>
+      </div>
+
+      <!-- Design -->
+      <div class="Design">DESIGN</div>
+
+      <!-- Total Subscribers -->
+      <div class="totalSubscribers">
+        <div class="top">
+          <div class="left">Total Subscribers</div>
+          <div class="right">+7%</div>
+        </div>
+        <div class="bottom">200K</div>
+      </div>
+      <div class="quote">A place to learn UI Design & Web Design</div>
+    </div>
+
+    <br /><br />
+    <hr />
+
+    <div class="container7">
+      <div class="cont7box1"></div>
+      <div class="cont7box2"></div>
+      <div class="cont7box3"></div>
+      <div class="cont7box4"></div>
+      <div class="cont7box5"></div>
+      <div class="cont7box6"></div>
+    </div>
+    <br /><br />
+    <hr />
+
+    <div class="container8">
+      <div class="header"><h2>UpperWala</h2></div>
+
+      <div class="sidebar"><h2>LeftWala</h2></div>
+      <div class="main"><h2>BichWala</h2></div>
+      <div class="aside"><h2>RightWala</h2></div>
+
+      <div class="footer"><h2>NicheWala</h2></div>
+    </div>
+
+    <br /><br />
+    <hr />
+    <div class="container9">
+      <div class="cont9Box cont9Box1"></div>
+      <div class="cont9Box cont9Box2"></div>
+      <div class="cont9Box cont9Box3"></div>
+      <div class="cont9Box cont9Box4"></div>
+      <div class="cont9Box cont9Box5"></div>
+      <div class="cont9Box cont9Box6"></div>
+      <div class="cont9Box cont9Box7"></div>
+      <div class="cont9Box cont9Box8"><h3>A</h3></div>
+      <div class="cont9Box cont9Box9"></div>
+      <div class="cont9Box cont9Box10"></div>
+      <div class="cont9Box cont9Box11"></div>
+      <div class="cont9Box cont9Box12"></div>
+    </div>
+    <br /><br />
+    <hr />
+
+    <div class="container10">
+      <div class="cont10Box1"></div>
+      <div class="cont10Box2"></div>
+      <div class="cont10Box3"></div>
+      <div class="cont10Box4"></div>
+      <div class="cont10Box5"></div>
+      <div class="cont10Box6"></div>
+      <div class="cont10Box7"></div>
+      <div class="cont10Box8"></div>
+      <div class="cont10Box9"></div>
+    </div>
+    <br /><br />
+    <hr />
+
+    <div class="container11">
+      <div class="cont11Box1"></div>
+      <div class="cont11Box2"></div>
+      <div class="cont11Box3"></div>
+      <div class="cont11Box4"></div>
+      <div class="cont11Box5"></div>
+      <div class="cont11Box6"></div>
+      <div class="cont11Box7"></div>
+      <div class="cont11Box8"></div>
+      <div class="cont11Box9"></div>
+    </div>
+    <br /><br />
+    <hr />
+
+    <h2 style="text-align: center;">Auto-Fit</h2>
+    <div class="container12">
+      <div class="cont12"></div>
+      <div class="cont12"></div>
+      <!-- <div class="cont12"></div>
+      <div class="cont12"></div>
+      <div class="cont12"></div>
+      <div class="cont12"></div>
+      <div class="cont12"></div>
+      <div class="cont12"></div> -->
+    </div>
+    <br /><br />
+    <hr />
+
+    <h2 style="text-align: center;">Auto-Fill</h2>
+    <div class="container13">
+      <div class="cont13"></div>
+      <div class="cont13"></div>
+      <div class="cont13"></div>
+      <!-- <div class="cont13"></div>
+      <div class="cont13"></div>
+      <div class="cont13"></div>
+      <div class="cont13"></div>
+      <div class="cont13"></div> -->
+    </div>
+    <br /><br />
+    <hr />
+  </body>
+</html>

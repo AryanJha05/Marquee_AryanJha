@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PaperForm</title>
+    <style>
+      body {
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial;
+        padding: 20px;
+      }
+      form {
+        margin: 0 auto;
+        width: 50%;
+        border: 1px solid black;
+        border-radius: 15px;
+      }
+      input {
+        border: none;
+        outline: none;
+        border-bottom: 1px solid black;
+        background-color: transparent;
+      }
+      table,
+      td,
+      th,
+      tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        
+      }
+      fieldset {
+        border: none;
+      }
+
+      #Fitness {
+        margin-top: 20px;
+        display: inline-block;
+        border: 2.5px solid black;
+        padding: 10px;
+        border-radius: 15px;
+      }
+      legend {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <u><h1 style="text-align: center">Sports Physical Form</h1></u>
+      <fieldset>
+        <legend>Athlete Information</legend>
+
+        <ul>
+          <li>
+            <label for="name">Name: </label
+            ><input type="text" id="name" name="name" />
+          </li>
+          <br />
+          <li>
+            <label for="school">School.Team: </label
+            ><input type="text" id="school" name="school" />
+          </li>
+          <br />
+          <li>
+            <label for="sport">Sport: </label
+            ><input type="text" id="sport" name="sport" />
+          </li>
+          <br />
+          <li>
+            <label for="parent_name">Parent/Guardian Name: </label>
+            <input type="text" id="parent_name" name="parent_name" />
+          </li>
+          <br />
+          <li>
+            <label for="contact_number">Contact Number: </label
+            ><input type="tel" id="contact_number" name="contact_number" />
+          </li>
+          <br />
+        </ul>
+      </fieldset>
+      <hr />
+      <br /><br />
+
+      <fieldset>
+        <legend>Medical History for Athletes</legend>
+        <ul>
+          <li>
+            <label for="concussion_history">History of concussion:</label>
+            <input
+              type="radio"
+              id="concussion_history_yes"
+              name="concussion_history"
+              value="yes"
+            />
+            <label for="concussion_history_yes">Yes</label>
+            <input
+              type="radio"
+              id="concussion_history_no"
+              name="concussion_history"
+              value="no"
+            />
+            <label for="concussion_history_no">No</label>
+          </li>
+          <br />
+          <li>
+            <label for="previous_surgeries">Previous surgeries:</label>
+            <input
+              type="text"
+              id="previous_surgeries"
+              name="previous_surgeries"
+            />
+          </li>
+          <br />
+          <li>
+            <label for="bone_fractures">Any bone fractures:</label>
+            <input
+              type="radio"
+              id="bone_fractures_yes"
+              name="bone_fractures"
+              value="yes"
+            />
+            <label for="bone_fractures_yes">Yes</label>
+            <input
+              type="radio"
+              id="bone_fractures_no"
+              name="bone_fractures"
+              value="no"
+            />
+            <label for="bone_fractures_no">No</label>
+          </li>
+          <br />
+          <li>
+            <label for="asthma_breathing">Asthma or Breathing Problem:</label>
+            <input
+              type="radio"
+              id="asthma_breathing_yes"
+              name="asthma_breathing"
+              value="yes"
+            />
+            <label for="asthma_breathing_yes">Yes</label>
+            <input
+              type="radio"
+              id="asthma_breathing_no"
+              name="asthma_breathing"
+              value="no"
+            />
+            <label for="asthma_breathing_no">No</label>
+          </li>
+          <br />
+        </ul>
+      </fieldset>
+      <hr />
+      <br /><br />
+
+      <fieldset style="display: flex; justify-content: center">
+        <legend>Fitness Assessment</legend>
+        <div id="Fitness">
+          <table>
+            <thead>
+              <tr>
+                <td>Category</td>
+                <td>Pass</td>
+                <td>Fail</td>
+                <td>Comments</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><label for="cardiovascular">Cardiovascular</label></td>
+                <td>
+                  <input
+                    type="radio"
+                    id="cardiovascular_yes"
+                    name="cardiovascular"
+                    value="yes"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="cardiovascular_no"
+                    name="cardiovascular"
+                    value="no"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="cardiovascular_comments"
+                    name="cardiovascular_comments"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="flexibility">Flexibility</label></td>
+                <td>
+                  <input
+                    type="radio"
+                    id="flexibility_yes"
+                    name="flexibility"
+                    value="yes"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="flexibility_no"
+                    name="flexibility"
+                    value="no"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="flexibility_comments"
+                    name="flexibility_comments"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="strength">Strength</label></td>
+                <td>
+                  <input
+                    type="radio"
+                    id="strength_yes"
+                    name="strength"
+                    value="yes"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="strength_no"
+                    name="strength"
+                    value="no"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="strength_comments"
+                    name="strength_comments"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="endurance">Endurance</label></td>
+                <td>
+                  <input
+                    type="radio"
+                    id="endurance_yes"
+                    name="endurance"
+                    value="yes"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="radio"
+                    id="endurance_no"
+                    name="endurance"
+                    value="no"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="endurance_comments"
+                    name="endurance_comments"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
