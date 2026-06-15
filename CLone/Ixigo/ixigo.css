@@ -33,7 +33,7 @@ body{
 .wavy-border{
     width:100%;
     height:10px;
-    background-image:url('bb1da9a569b99f86ec71580cca5d044e-zuwuo.png');
+    background-image:url('./img/wavyBorder.png');
     background-repeat:repeat-x;
     background-size:auto 100%;
 }
@@ -147,11 +147,11 @@ body{
 }
 
 .flight-icon{
-    background-image:url('2af43f961dddc6cfb02254712f0df058-rbzyb.webp');
+    background-image:url('./img/plane.webp');
 }
 
 .hotel-icon{
-    background-image:url('2fa9ebf005adc1ed6473d6229aedfaa5-dwtqq.webp');
+    background-image:url('./img/hotel.webp');
 }
 .hotel-offer-badge{
     position:absolute;
@@ -170,11 +170,11 @@ body{
 }
 
 .train-icon{
-    background-image:url('d2db102bf758f425496336d908a598b8-dttji.webp');
+    background-image:url('./img/train.webp');
 }
 
 .bus-icon{
-    background-image:url('23928375e30875ccd2ba5613aae81763-qqyww.webp');
+    background-image:url('./img/bus.webp');
 }
 
 .active-travel{
