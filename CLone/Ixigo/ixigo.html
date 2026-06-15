@@ -1,798 +1,409 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      ixigo - Best Travel Website, Book Flights, Trains, Hotels & Buses
-    </title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-
-    <style>
-      :root {
-        --main-border: 1px solid #e5e5e5;
-        --border-radius: 25px;
-        --box-shadow: 0px 4px 30px -5px rgba(0, 0, 0, 0.25);
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-      }
-
-      /* ==========================
-   TOP OFFER SECTION
-========================== */
-
-      .top-offer {
-        width: 100%;
-      }
-
-      .top-offer-content {
-        height: 152px;
-        background: linear-gradient(180deg, #011733 0%, #04418d 100%);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 80px;
-        padding: 0 20px;
-      }
-
-      .offer-text {
-        color: white;
-        font-size: 32px;
-        font-weight: 500;
-        text-align: center;
-      }
-
-      .offer-image {
-        width: 130px;
-        height: 130px;
-
-        background: url("offerImg.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-
-      .wavy {
-        width: 100%;
-        height: 8px;
-
-        background: url("wavy.png");
-        background-repeat: repeat-x;
-        background-size: 60px 8px;
-      }
-
-      /* ==========================
-   HEADER
-========================== */
-
-      .header-container {
-        width: 100%;
-        height: 72px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #fff;
-        border-bottom: 1px solid #e5e5e5;
-      }
-
-      .header {
-        width: 95%;
-        height: 100%;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      /* Logo */
-
-      .logo {
-        width: 82px;
-        height: 40px;
-
-        background: url("ixigoLogo.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-      }
-
-      /* Right Side */
-
-      .header-right {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-      }
-
-      /* Menu */
-
-      .menu {
-        display: flex;
-        align-items: center;
-      }
-
-      .menu-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-
-        padding: 0 20px;
-        height: 32px;
-
-        cursor: pointer;
-      }
-
-      .menu-item:last-child {
-        border-right: none;
-      }
-
-      .menu-item i {
-        font-size: 15px;
-        color: #555;
-      }
-
-      .menu-item span {
-        font-size: 15px;
-        font-weight: 500;
-        color: #222;
-      }
-
-      .menu-item:hover {
-        color: #ff6d00;
-      }
-
-      .menu-item:hover i {
-        color: #ff6d00;
-      }
-
-      /* Login */
-
-      .login {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        padding-left: 25px;
-
-        cursor: pointer;
-      }
-
-      .profile-logo {
-        width: 38px;
-        height: 38px;
-
-        border-radius: 50%;
-        background: #e8f0fe;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .profile-logo img {
-        width: 22px;
-        height: 22px;
-      }
-
-      .login-text {
-        font-size: 15px;
-        font-weight: 500;
-        color: #222;
-      }
-
-      .login:hover .login-text {
-        color: #ff6d00;
-      }
-
-      /* ==========================
-   RESPONSIVE
-========================== */
-
-      @media (max-width: 768px) {
-        .top-offer-content {
-          flex-direction: column;
-          height: auto;
-          padding: 20px;
-          gap: 20px;
-        }
-
-        .offer-text {
-          font-size: 22px;
-        }
-
-        .header {
-          width: 95%;
-        }
-
-        .menu-item span,
-        .login-text {
-          display: none;
-        }
-
-        .header-right {
-          gap: 15px;
-        }
-      }
-
-      /* ==========================
-   Main Container
-========================== */
-
-      .main-container {
-        width: 95%;
-        margin: 0 auto;
-      }
-      .travel-tabs {
-        width: 95%;
-        margin: 25px auto 0;
-
-        display: flex;
-        align-items: center;
-        gap: 40px;
-
-        border-bottom: 1px solid #e5e5e5;
-      }
-
-      .tab {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        padding-bottom: 18px;
-
-        cursor: pointer;
-      }
-
-      .tab img {
-        width: 48px;
-        height: 48px;
-      }
-
-      .tab span {
-        font-size: 20px;
-        font-weight: 500;
-        color: #4a4a4a;
-      }
-
-      .tab.active {
-        border-bottom: 4px solid #0a6cff;
-      }
-
-      .tab.active span {
-        color: #111;
-        font-weight: 600;
-      }
-      /* ==========================
-   Container 1
-========================== */
-
-      .container1 {
-        margin-top: 30px;
-      }
-
-      .container1 .top {
-        height: 60px;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .flight-title {
-        font-size: 18px;
-        color: #555;
-      }
-
-      .container1 .down {
-        background: #fff;
-
-        border-radius: 24px;
-
-        padding: 24px;
-
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      }
-
-      /* Trip Type */
-
-      .trip-type {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 25px;
-      }
-
-      .trip-btn {
-        padding: 12px 25px;
-        border: 1px solid #ddd;
-        border-radius: 50px;
-        cursor: pointer;
-      }
-
-      .trip-btn.active {
-        border: 1px solid #0078ff;
-        color: #0078ff;
-      }
-
-      /* Search Row */
-
-      .search-row {
-        display: flex;
-        margin-bottom: 25px;
-      }
-
-      .field {
-        flex: 1;
-        height: 70px;
-
-        border: 1px solid #eee;
-
-        display: flex;
-        align-items: center;
-
-        padding-left: 20px;
-      }
-
-      .label {
-        color: #666;
-        font-size: 18px;
-      }
-
-      .search-btn {
-        width: 180px;
-
-        background: #ff7a00;
-        color: white;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        font-size: 28px;
-
-        cursor: pointer;
-      }
-
-      /* Special Fares */
-
-      .special-fares {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .fare-chip {
-        padding: 8px 18px;
-        border: 1px solid #ccc;
-        border-radius: 30px;
-        cursor: pointer;
-      }
-
-      /* ==========================
-   Container 2
-========================== */
-
-      .container2 {
-        margin-top: 50px;
-      }
-
-      .container2 .top {
-        margin-bottom: 20px;
-      }
-
-      .title {
-        font-size: 18px;
-        font-weight: 600;
-      }
-
-      .container2 .down {
-        background: #fff;
-
-        border-radius: 24px;
-
-        min-height: 160px;
-
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      }
-
-      .service-box {
-        padding: 20px;
-        text-align: center;
-      }
-
-      .support {
-        margin-left: auto;
-        color: #444;
-        font-size: 16px;
-      }
-
-      .search-row {
-        display: flex;
-        height: 80px;
-      }
-
-      .field {
-        flex: 1;
-        border: 1px solid #eee;
-        padding: 15px 20px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .field small {
-        color: #7a7a7a;
-        font-size: 12px;
-      }
-
-      .field strong {
-        font-size: 16px;
-      }
-
-      .search-btn {
-        width: 180px;
-        background: #ff7a00;
-        color: white;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        font-size: 18px;
-        font-weight: 600;
-
-        border-radius: 0 12px 12px 0;
-      }
-
-      .free-cancel {
-        margin-top: 25px;
-
-        background: #eef5ff;
-
-        padding: 18px;
-
-        border-radius: 12px;
-
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      
-      /* ==========================
-   Footer
-========================== */
-
-      .footer {
-        width: 100%;
-        height: 28px;
-        padding: 20px 40px;
-        border-top: 1px solid #e5e5e5;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        background: #fff;
-      }
-
-      .footer-line {
-        flex: 1;
-      }
-
-      .footer-line .box1 {
-        font-size: 13px;
-        color: #666;
-        line-height: 20px;
-      }
-
-      .footer-logos {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .footer-logos .box1 {
-        width: 28px;
-        height: 28px;
-
-        border-radius: 50%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      .footer-logos .box1 i {
-        font-size: 18px;
-        color: #555;
-      }
-
-      .footer-logos .box1:hover {
-        background: #f3f3f3;
-      }
-
-      .footer-logos .box1:hover i {
-        color: #ff6d00;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- ==========================
-     TOP OFFER
-========================== -->
-
-    <div class="top-offer">
-      <div class="top-offer-content">
-        <div class="offer-text">
-          Flat 19% Off on Flights & Flat 91% Off on Hotels
-        </div>
-
-        <div class="offer-image"></div>
-      </div>
-
-      <div class="wavy"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to make clone of https://www.ixigo.com/</title>
+    <link rel="stylesheet" href="ixigo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="offer-banner">
+        <span>Flat 19% Off on Flights &amp; Flat 91% Off on Hotels</span>
+        <img src="978d4d8aafbda4484255a943f600ff88-bmmmu.png" alt="offer" class="offer-img">
     </div>
 
-    <!-- ==========================
-     HEADER
-========================== -->
+    <div class="wavy-border"></div>
 
-    <div class="header-container">
-      <div class="header">
-        <div class="logo"></div>
-
-        <div class="header-right">
-          <div class="menu">
-            <div class="menu-item">
-              <i class="fa-solid fa-percent"></i>
-              <span>Offers</span>
-            </div>
-
-            <div class="menu-item">
-              <i class="fa-solid fa-headset"></i>
-              <span>Customer Service</span>
-            </div>
-          </div>
-
-          <div class="login">
-            <div class="profile-logo">
-              <img src="login.png" alt="profile" />
-            </div>
-
-            <div class="login-text">Log in / Sign up</div>
-          </div>
+    <header class="ixigo-header">
+        <div class="left-nav">
+            <img src="aac1498d8f956aa99344f08773c70fb6-evncq.webp" alt="ixigo logo" class="logo">
         </div>
-      </div>
+
+        <div class="right-nav">
+            <div class="nav-item">
+                <i class="bi bi-ticket-perforated-fill nav-icon"></i>
+                <a href="#">Offers</a>
+            </div>
+
+            <div class="nav-item">
+                <i class="bi bi-headset nav-icon"></i>
+                <a href="#">Customer Service</a>
+            </div>
+
+            <div class="user-section">
+                <div class="user-circle">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <span>Log in/Sign up</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+
+    <div class="travel-tabs">
+
+        <div class="travel-item active-travel">
+            <div class="travel-icon flight-icon"></div>
+            <span>Flights</span>
+        </div>
+
+        <div class="travel-item hotel-tab">
+    <div class="hotel-offer-badge">Flat 91% Off</div>
+    <div class="travel-icon hotel-icon"></div>
+    <span>Hotels</span>
+</div>
+
+        <div class="travel-item">
+            <div class="travel-icon train-icon"></div>
+            <span>Trains</span>
+        </div>
+
+        <div class="travel-item">
+            <div class="travel-icon bus-icon"></div>
+            <span>Buses</span>
+        </div>
+
+        <div class="travel-heading">
+            Book International and Domestic Flights
+        </div>
+
     </div>
 
-    <!-- ==========================
-     Main Container
-========================== -->
+    <div class="booking-card">
 
-    <div class="main-container">
-      <div class="main-container">
+        <div class="trip-buttons">
+            <button class="trip-btn active-trip">One Way</button>
+            <button class="trip-btn">Round Trip</button>
+            <div class="customer-support">
+    <i class="bi bi-telephone-fill"></i>
+    <span>24x7 Customer Support</span>
+</div>
+        </div>
+
+        <div class="search-grid">
+
+            <div class="field-box from-box">
+                <span>From</span>
+            </div>
+
+            <div class="field-box">
+                <span>To</span>
+            </div>
+
+            <div class="field-box">
+                <small>Departure</small>
+                <h3>Sat, 06 Jun</h3>
+            </div>
+
+            <div class="field-box">
+                <span>Return</span>
+            </div>
+
+            <div class="field-box traveller-box">
+                <small>Travellers & Class</small>
+                <h3>1 Traveller, Economy</h3>
+            </div>
+
+            <button class="main-search-btn">
+    Search
+    <i class="bi bi-chevron-right"></i>
+</button>
+
+        </div>
+
+        <div class="special-fares">
+            <strong>Special Fares</strong>
+            <span>(Optional) :</span>
+
+            <div class="fare-pill">Student</div>
+            <div class="fare-pill">Senior Citizen</div>
+            <div class="fare-pill">Armed Forces</div>
+        </div>
+
+        <div class="protection-bar">
+            <div class="protection-left">
+                <input type="checkbox">
+                <strong>Always opt for Free Cancellation</strong>
+            </div>
+
+            <div class="protection-right">
+
+    <span class="separator">•</span>
+
+    <div class="benefit-item">
+        <i class="bi bi-ticket-perforated"></i>
+        <span>₹0 cancellation fee</span>
+    </div>
+
+    <span class="separator">•</span>
+
+    <div class="benefit-item">
+        <i class="bi bi-currency-rupee"></i>
+        <span>No-questions-asked instant refunds</span>
+    </div>
+
+    <span class="separator">•</span>
+
+    <div class="benefit-item">
+        <i class="bi bi-headset"></i>
+        <span>Priority customer service</span>
+    </div>
+
+</div>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="do-more-section">
+ <span class="section-heading">
+    Do More With ixigo
+</span>
+<section class="do-more-card">
+
+    <div class="do-more-item">
+        <i class="bi bi-airplane-engines"></i>
+        <span>Flight<br>Tracker</span>
+        <div class="badge-pro">Pro</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="do-more-item">
+        <i class="bi bi-credit-card"></i>
+        <span>Credit Card</span>
+        <div class="badge-free">Free</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="do-more-item">
+        <i class="bi bi-passport"></i>
+        <span>Book Visa</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="do-more-item">
+        <i class="bi bi-people"></i>
+        <span>Group<br>Booking</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="do-more-item">
+        <i class="bi bi-compass"></i>
+        <span>Plan</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="do-more-item">
+        <i class="bi bi-bell"></i>
+        <span>Fare Alerts</span>
+    </div>
+
+</section>
+</div>
+<section class="offers-section">
+
+    <div class="offers-header">
+
+        <h2>Offers For You</h2>
+
+        <div class="offers-controls">
+
+            <button class="offer-filter active-filter">
+                Flights
+            </button>
+
+            <button class="offer-filter">
+                Hotels
+            </button>
+
+            <button class="offer-filter">
+                Bank Offers
+            </button>
+
+            <button class="offer-filter">
+                Trains
+            </button>
+
+            <a href="#" class="view-all">
+                View All
+                <i class="bi bi-chevron-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="offers-slider">
+
+        <div class="offer-card">
+            <img src="offer1.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer2.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer3.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer4.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer5.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer6.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer7.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer8.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer9.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer10.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer11.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer12.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer13.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer14.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer15.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer16.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer17.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer18.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer19.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer20.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer21.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer22.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer23.webp" alt="">
+        </div>
+        <div class="offer-card">
+            <img src="offer24.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer25.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer26.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer27.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer28.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer29.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer30.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer31.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer32.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer33.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer34.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer35.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer36.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer37.webp" alt="">
+        </div>
+
+        <div class="offer-card">
+            <img src="offer38.webp" alt="">
+        </div>
+
+        <div class="slider-next">
+    <i class="bi bi-chevron-right"></i>
+</div>
+
+
         
 
-        <!-- Flights / Hotels / Trains / Buses -->
-
-        <div class="travel-tabs">
-          <div class="tab active">
-            <img src="flight.png" />
-            <span>Flights</span>
-          </div>
-
-          <div class="tab">
-            <img src="hotel.png" />
-            <span>Hotels</span>
-          </div>
-
-          <div class="tab">
-            <img src="train.png" />
-            <span>Trains</span>
-          </div>
-
-          <div class="tab">
-            <img src="bus.png" />
-            <span>Buses</span>
-          </div>
-        </div>
-        <div class="container2">
-          <!-- Do More With ixigo -->
-        </div>
-      </div>
-      <!-- Container 1 -->
-      <div class="container1">
-        <div class="top">
-          <div></div>
-
-          <div class="flight-title">
-            Book International and Domestic Flights
-          </div>
-        </div>
-
-        <div class="down">
-          <!-- One Way / Round Trip -->
-          <div class="trip-type">
-            <div class="trip-btn active">One Way</div>
-            <div class="trip-btn">Round Trip</div>
-          </div>
-
-          <!-- Search Fields -->
-          <div class="search-row">
-            <div class="field">
-              <div class="label">From</div>
-            </div>
-
-            <div class="field">
-              <div class="label">To</div>
-            </div>
-
-            <div class="field">
-              <div class="label">Departure</div>
-            </div>
-
-            <div class="field">
-              <div class="label">Return</div>
-            </div>
-
-            <div class="field">
-              <div class="label">Travellers & Class</div>
-            </div>
-
-            <div class="search-btn">Search</div>
-          </div>
-
-          <!-- Special Fares -->
-          <div class="special-fares">
-            <span>Special Fares (Optional):</span>
-
-            <div class="fare-chip">Student</div>
-            <div class="fare-chip">Senior Citizen</div>
-            <div class="fare-chip">Armed Forces</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Container 2 -->
-
-      <div class="container2">
-        <div class="top">
-          <div class="title">Do More With ixigo</div>
-        </div>
-
-        <div class="down">
-          <div class="service-box">Flight Tracker</div>
-          <div class="service-box">Credit Card</div>
-          <div class="service-box">Book Visa</div>
-          <div class="service-box">Group Booking</div>
-          <div class="service-box">Plan</div>
-          <div class="service-box">Fare Alerts</div>
-        </div>
-      </div>
-      <div class="container1">
-        <div class="top">
-          <div></div>
-
-          <div class="flight-title">
-            Book International and Domestic Flights
-          </div>
-        </div>
-
-        <div class="down">
-          <!-- Trip Type -->
-          <div class="trip-type">
-            <div class="trip-btn active">One Way</div>
-
-            <div class="trip-btn">Round Trip</div>
-
-            <div class="support">
-              <i class="fa-solid fa-phone"></i>
-              24x7 Customer Support
-            </div>
-          </div>
-
-          <!-- Search Fields -->
-          <div class="search-row">
-            <div class="field from">
-              <span>From</span>
-            </div>
-
-            <div class="field to">
-              <span>To</span>
-            </div>
-
-            <div class="field departure">
-              <small>Departure</small>
-              <strong>Sat, 06 Jun</strong>
-            </div>
-
-            <div class="field return">
-              <span>Return</span>
-            </div>
-
-            <div class="field traveller">
-              <small>Travellers & Class</small>
-              <strong>1 Traveller, Economy</strong>
-            </div>
-
-            <div class="search-btn">Search</div>
-          </div>
-
-          <!-- Special Fares -->
-
-          <div class="special-fares">
-            <span class="fare-title"> Special Fares (Optional): </span>
-
-            <div class="fare-chip">Student</div>
-
-            <div class="fare-chip">Senior Citizen</div>
-
-            <div class="fare-chip">Armed Forces</div>
-          </div>
-
-          <!-- Free Cancellation -->
-
-          <div class="free-cancel">
-            <input type="checkbox" />
-
-            <span> Always opt for Free Cancellation </span>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!--  ==========================
-   Footer
-==========================  -->
-    <div class="footer">
-      <div class="footer-line">
-        <div class="box1">
-          © 2026 Le Travenues Technology Ltd. India. All brands are trademarks
-          of their respective owners.
-        </div>
-      </div>
-
-      <div class="footer-logos">
-        <div class="box1">
-          <i class="fa-brands fa-facebook-f"></i>
-        </div>
-
-        <div class="box1">
-          <i class="fa-brands fa-x-twitter"></i>
-        </div>
-
-        <div class="box1">
-          <i class="fa-brands fa-instagram"></i>
-        </div>
-
-        <div class="box1">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+</section>
+    
