@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Cake</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+      }
+
+      /* Cake Container */
+
+      .cake {
+        position: relative;
+      }
+
+      /* Plate */
+
+      .plate {
+        width: 280px;
+        height: 20px;
+        background: #ddd;
+        border-radius: 50px;
+        margin: auto;
+      }
+
+      /* Cake Layers */
+
+      .layer {
+        width: 220px;
+        height: 70px;
+        background: #d2691e;
+        border-radius: 10px;
+        margin: auto;
+      }
+
+      .bottom {
+        margin-top: 5px;
+      }
+
+      .top {
+        width: 180px;
+      }
+
+      /* Icing */
+
+      .icing {
+        width: 180px;
+        height: 20px;
+        background: pink;
+        border-radius: 20px 20px 10px 10px;
+
+        position: absolute;
+        top: -5px;
+        left: 50%;
+
+        transform: translateX(-50%);
+      }
+
+      /* Candle */
+
+      .candle {
+        width: 15px;
+        height: 60px;
+        background: white;
+
+        position: absolute;
+        top: -65px;
+        left: 50%;
+
+        transform: translateX(-50%);
+      }
+
+      /* Flame */
+
+      .flame {
+        width: 20px;
+        height: 20px;
+        background: gold;
+        border-radius: 50% 50% 50% 0;
+
+        position: absolute;
+        top: -15px;
+        left: 50%;
+
+        transform: translateX(-50%) rotate(45deg);
+      }
+      .flame:active {
+        transform: translateX(-50%) rotate(45deg) scale(0.9);
+      }
+
+      /* Balloon */
+
+      .balloon {
+        width: 60px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+      }
+
+      /* String */
+
+      .balloon::after {
+        content: "";
+        width: 2px;
+        height: 60px;
+        background: #444;
+
+        position: absolute;
+        left: 50%;
+        top: 80px;
+      }
+
+      /* Colors & Positions */
+
+      .balloon1 {
+        background: #ff4d4d;
+        left: 10%;
+        animation: fly 7s linear infinite;
+      }
+
+      .balloon2 {
+        background: #4da6ff;
+        left: 30%;
+        animation: fly 6s linear infinite;
+      }
+
+      .balloon3 {
+        background: #66cc66;
+        right: 10%;
+        animation: fly 8s linear infinite;
+      }
+
+      /* Flying Animation */
+
+      @keyframes fly {
+        0% {
+          transform: translateY(100vh);
+        }
+
+        100% {
+          transform: translateY(-120vh);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="balloon balloon1"></div>
+    <div class="balloon balloon2"></div>
+    <div class="balloon balloon3"></div>
+    
+    <div class="cake">
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+
+      <div class="icing"></div>
+
+      <div class="layer top"></div>
+      <div class="layer bottom"></div>
+
+      <div class="plate"></div>
+    </div>
+  </body>
+</html>

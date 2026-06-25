@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expanding Cards</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f8d7ff, #d6e4ff);
+        display: grid;
+        grid-template-rows: 80px 1fr 80px;
+      }
+
+      /* ================= HEADER ================= */
+
+      header {
+        background: #ffffff55;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 60px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        margin-bottom: 10px;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: #333;
+      }
+
+      nav {
+        display: flex;
+        gap: 35px;
+      }
+
+      nav a {
+        position: relative;
+        text-decoration: none;
+        color: #555;
+        font-size: 17px;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #7a3cff;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background: #7a3cff;
+        transition: 0.3s;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      /* ================= MAIN ================= */
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        padding: auto;
+        
+      }
+
+      .title {
+        text-align: center;
+        margin-top: -20px;
+      }
+
+      .title h1 {
+        font-size: 48px;
+        color: #222;
+        margin-bottom: 10px;
+      }
+
+      .title p {
+        color: #666;
+        font-size: 14px;
+      }
+
+      /* ================= CARDS ================= */
+
+      .container {
+        display: flex;
+        width: 72vw;
+        max-width: 1300px;
+      }
+
+      .panel {
+        flex: 0.5;
+        height: 60vh;
+        margin: 10px;
+        border-radius: 30px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        transition: 1s ease;
+      }
+
+      /* Images */
+
+      .panel:nth-child(1) {
+        background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200");
+      }
+
+      .panel:nth-child(2) {
+        background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200");
+      }
+
+      .panel:nth-child(3) {
+        background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200");
+      }
+
+      .panel:nth-child(4) {
+        background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200");
+      }
+
+      .panel:nth-child(5) {
+        background-image: url("https://images.unsplash.com/photo-1470770903676-69b98201ea1c?w=1200");
+      }
+
+      /* Overlay */
+
+      .panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.75),
+          transparent 60%
+        );
+      }
+
+      /* Card Title */
+
+      .panel h3 {
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+        color: #fff;
+        font-size: 28px;
+        opacity: 0;
+        transform: translateY(25px);
+        transition: 0.4s;
+        z-index: 2;
+      }
+
+      /* Hover */
+
+      .panel:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Active */
+
+      .panel.active {
+        flex: 6;
+      }
+
+      .panel.active h3 {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.3s;
+      }
+
+      /* ================= FOOTER ================= */
+
+      footer {
+        background: #ffffff4e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #666;
+        font-size: 14px;
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.08);
+        margin-top: 20px;
+        margin-bottom: 0px;
+      }
+
+      /* ================= RESPONSIVE ================= */
+
+      @media (max-width: 900px) {
+        header {
+          flex-direction: column;
+          padding: 20px;
+          gap: 15px;
+        }
+
+        nav {
+          gap: 20px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .title h1 {
+          font-size: 36px;
+        }
+
+        .title p {
+          font-size: 16px;
+        }
+
+        .container {
+          width: 100vw;
+        }
+
+        .panel {
+          height: 56vh;
+        }
+
+        .panel:nth-child(4),
+        .panel:nth-child(5) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Nature Gallery</div>
+
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Gallery</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="title">
+        <h2>Explore Nature</h2>
+        <p>Click on any image to discover beautiful landscapes.</p>
+      </div>
+
+      <div class="container">
+        <div class="panel active">
+          <h3>Forest</h3>
+        </div>
+
+        <div class="panel">
+          <h3>Mountain</h3>
+        </div>
+
+        <div class="panel">
+          <h3>Beach</h3>
+        </div>
+
+        <div class="panel">
+          <h3>Nature</h3>
+        </div>
+
+        <div class="panel">
+          <h3>Sunset</h3>
+        </div>
+      </div>
+    </main>
+
+    <footer>© 2026 Aryan Jha | HTML • CSS • JavaScript Showcase</footer>
+    <script>
+      const panels = document.querySelectorAll(".panel");
+
+      panels.forEach((panel) => {
+        panel.addEventListener("click", () => {
+          panels.forEach((p) => p.classList.remove("active"));
+
+          panel.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
