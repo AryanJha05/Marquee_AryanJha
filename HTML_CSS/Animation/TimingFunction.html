@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition Timing Functions</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #f8d7ff, #d6e4ff);
+        border: 1px solid #000000;
+      }
+      .innerContainer {
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #000000;
+        margin: 10px;
+        width: 1000px;
+        height: 125px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        line-height: 100px;
+        position: absolute;
+        left: 20px;
+      }
+      .linear {
+        background-color: red;
+        animation: transition 5s linear infinite;
+      }
+
+      .easeBox {
+        background-color: blue;
+        animation: transition 5s ease infinite;
+      }
+
+      .easeInBox {
+        background-color: green;
+        animation: transition 5s ease-in infinite;
+      }
+
+      .easeOutBox {
+        background-color: goldenrod;
+        animation: transition 5s ease-out infinite;
+      }
+
+      .easeInOutBox {
+        background-color: purple;
+        animation: transition 5s ease-in-out infinite;
+      }
+      @keyframes transition {
+        0% {
+        
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(1000px - 140px - 40px));
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="innerContainer">
+        <div class="box linear">Linear</div>
+      </div>
+      <div class="innerContainer">
+        <div class="box easeBox">ease</div>
+      </div>
+      <div class="innerContainer">
+        <div class="box easeInBox">ease-in</div>
+      </div>
+      <div class="innerContainer">
+        <div class="box easeOutBox">ease-out</div>
+      </div>
+      <div class="innerContainer">
+        <div class="box easeInOutBox">ease-in-out</div>
+      </div>
+    </div>
+  </body>
+</html>
