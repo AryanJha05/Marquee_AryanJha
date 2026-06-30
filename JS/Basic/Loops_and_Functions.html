@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops and Functions</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        font-weight: bold;
+        background-color: black;
+        color: goldenrod;
+        margin: 0;
+        padding: 20px;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .consoleContainer {
+        font-family: sans-serif;
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .consoleContainer .cc {
+        background-color: rgba(160, 158, 158, 0.367);
+        padding: 10px;
+        font-size: 25px;
+        color: #f8ad19;
+        border-radius: 5px;
+        box-shadow: 1px 1px #ccc;
+        margin: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+
+      /* .consoleContainer .cc span {
+        font-size: 10px;
+        color: #ccc;
+        font-family: sans-serif;
+      } */
+
+      /* Responsive */
+
+      @media (max-width: 600px) {
+        .consoleContainer {
+          padding: 3px;
+          margin: 5px;
+        }
+        .consoleContainer .cc {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="consoleContainer">
+      <span
+        style="
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.799);
+          padding: 10px;
+          font-weight: 200;
+        "
+        >JavaScript logs will be printed here.....</span
+      >
+      <div class="cc"></div>
+
+    </div>
+
+    <script>
+      const cc = document.querySelector(".consoleContainer .cc");
+
+      //-------------------------------------------------------------------------------
+
+      //     // For Loop
+      //   for (let i = 0; i < 5; i++) {
+      //     cc.textContent += `For Loop: ${i}\n`;
+      //   }
+
+      //-----------------------------------
+
+      //     // While Loop
+      // let j = 0;
+      // while(j < 5){
+      //     cc.textContent += `${j}\t`;
+      //     j++;
+      // }
+
+      //-----------------------------------
+
+      //      // do...while Loop
+      // let k = 0;
+      // do{
+      //     cc.textContent += `${k}\t`;
+      //     k++;
+      // }while(k < 5);
+
+      //-----------------------------------
+
+      //    //for...of Loop
+      // const arr = [1, 2, 3, 4, 5];
+
+      // for (const value of arr) {
+      //     cc.textContent += `${value}\t`;
+      // }
+
+      // const arr = [
+      //   "apple",
+      //   "banana",
+      //   "mango",
+      //   "orange",
+      //   "grapes",
+      //   "kiwi",
+      //   "watermelon",
+      //   "pineapple",
+      //   "papaya",
+      //   "strawberry",
+      // ];
+
+      // for (const fruit of arr) {
+      //   cc.textContent += `${fruit}\n`;
+      // }
+
+      //-----------------------------------
+
+      //      //for...in Loop
+      // const obj = {
+      //     name : "Aryan",
+      //     age : 20,
+      //     city : "Vadodara"
+      // }
+
+      // for (const key in obj) {
+      //     cc.textContent += `${key} : ${obj[key]}\n`;
+      // }
+
+      // const obg = {
+      //   a:5,
+      //   b:6,
+      //   c:10,
+      //   d:12,
+      //   e:44
+      // }
+
+      // for(const key in obg){
+      //   cc.textContent += `${key} : ${obg[key]}\n`;
+      // }
+
+      //-----------------------------------
+
+      //      // .forEach() Loop
+      // const arr = [1, 2, 3, 4, 5];
+      // arr.forEach((value, index) => {
+      //     cc.textContent += `Index: ${index}, Value: ${value}\n`;
+      // });
+
+      //-------------------------------------------------------------------------------
+
+      //   Function :
+
+      //Delcration of Function
+      // function greet(name) {
+      //   return `Hello, ${name}!`;
+      // }
+
+      // const name = "Aryan";
+      // cc.textContent = greet(name);
+
+      //-----------------------------------
+
+      // //Hoisted Function : we can call the function before declaring it.
+      // const name = "Aryan";
+      // cc.textContent = greet(name);
+
+      // function greet(name) {
+      //   return `Hello, ${name}!`;
+      // }
+
+      //-----------------------------------
+
+      //Arrow Function:
+      
+      // const name = "Aryan";
+      // cc.textContent = greet(name);
+      // const greet = (name) => {
+      //   return `Hello, ${name}!`;
+      // };
+
+      // const name = "Aryan";
+      // cc.textContent = greet(name);
+
+      //-----------------------------------
+
+      // // Scopes in Functions in JavaScript:
+      // let globalVar = "I am a global variable";
+      // function myFunction() {
+      //   let localVar = "I am a local variable";
+      //   cc.textContent = `${globalVar}\n${localVar}`;
+      // }
+      // myFunction();
+
+      //-----------------------------------
+
+      // // Function Parameters and Arguments: we can pass values to function and we can use those values in function.
+      // function greet(name, age) {
+      //   return `Hello, ${name}! You are ${age} years old.`;
+      // }
+      // const name = "Aryan";
+      // const age = 20;
+      // cc.textContent = greet(name, age);
+
+      //-----------------------------------
+
+
+      //IIFE - Immediately Invoked Function Expression: we can call the function immediately after declaring it.
+
+      // (function () {
+      //   cc.textContent = "Hello from IIFE!";
+      // })();
+
+      //Why use IIFE? It helps to avoid polluting the global scope and creates a private scope for variables and functions.
+
+      //-----------------------------------
+
+      //Questions:
+
+      //1 ==>
+      function greetStudent(name, city) {
+        return `1 => Hello, ${name} from ${city}.\n\n`;
+      }
+      cc.textContent = greetStudent("Aryan", "Vadodara");
+
+      //2 ==>
+      const multiply = (a, b) => {
+        return a * b;
+      };
+      cc.textContent += `2 => ${multiply(5, 10)}\n\n`;
+
+      //3 ==>
+      function sumAll(...numbers) {
+        return numbers.reduce((acc, curr) => acc + curr, 0);
+      }
+      cc.textContent += `3 => ${sumAll(1, 2, 3, 4, 5)}\n\n`;
+
+      //4 ==>
+      const isEven = (num) => {
+        return num % 2 === 0;
+      };
+      cc.textContent += `4 => ${isEven(10)}\n\n`;
+
+      //5 ==>
+
+      function factorial(n) {
+        if (n === 0 || n === 1) {
+          return 1;
+        }
+        return n * factorial(n - 1);
+      }
+      cc.textContent += `5 => ${factorial(5)}\n\n`;
+
+
+      //-------------------------------------------------------------------------------
+    </script>
+  </body>
+</html>

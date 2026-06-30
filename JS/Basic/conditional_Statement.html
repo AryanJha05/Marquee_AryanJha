@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional Statements</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        font-weight: bold;
+        background-color: black;
+        color: goldenrod;
+        margin: 0;
+        padding: 20px;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .consoleContainer {
+        width: 600px;
+        font-family: sans-serif;
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .consoleContainer .cc {
+        background-color: rgba(160, 158, 158, 0.367);
+        padding: 10px;
+        font-size: 16px;
+        color: #f3f70d;
+        border-radius: 5px;
+        box-shadow: 1px 1px #ccc;
+        margin: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+
+      /* .consoleContainer .cc span {
+        font-size: 10px;
+        color: #ccc;
+        font-family: sans-serif;
+      } */
+
+      /* Responsive */
+
+      @media (max-width: 600px) {
+        .consoleContainer {
+          width: 100%;
+          padding: 3px;
+          margin: 5px;
+        }
+        .consoleContainer .cc {
+          font-size: 14px;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="consoleContainer">
+      <div class="cc">
+        <span style="font-size: 14px; color: rgba(255, 255, 255, 0.799)"
+          >JavaScript logs will be printed here.....</span
+        >
+      </div>
+    </div>
+
+    <script>
+      //-------------------------------------------------------------------------------
+
+      const cc = document.querySelector(".consoleContainer .cc");
+
+      //If -Else Statement
+      //   let teamNumber = prompt("Enter your Team Number : ");
+      //   if(teamNumber % 2 == 0 || teamNumber == 15){
+      //     cc.textContent = "You are Allowed";
+      //   }else if(teamNumber % 2 == 1){
+      //     cc.textContent = "You are Not Allowed";
+      //   }
+
+      //-------------------------------------------------------------------------------
+
+      //Switch Statement
+    //   let day = prompt("Enter Day : ");
+    //     day = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase(); // Capitalize the first letter and lowercase the rest
+    //   switch (day) {
+    //     case "Monday":
+    //         cc.textContent = "Working Day";
+    //       break;
+    //     case "Tuesday":
+    //         cc.textContent = "Working Day";
+    //       break;
+    //     case "Wednesday":
+    //       cc.textContent = "Working Day";
+    //       break;
+    //     case "Thursday":
+    //       cc.textContent = "Working Day";
+    //       break;
+    //     case "Friday":
+    //       cc.textContent = "Working Day";
+    //       break;
+    //     case "Saturday":
+    //       cc.textContent = "Weekend";
+    //       break;
+    //     case "Sunday":
+    //       cc.textContent = "Weekend";
+    //       break;
+    //     default:
+    //       cc.textContent = "Invalid Day";
+    //   }
+
+      //-------------------------------------------------------------------------------
+
+    //   Ternary Operator
+      let age = prompt("Enter your Age : ");
+      let result = age >= 18 ? "You are Eligible to Vote" : "You are Not Eligible to Vote";
+      cc.textContent = result;
+    </script>
+  </body>
+</html>

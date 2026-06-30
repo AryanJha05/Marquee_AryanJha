@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays in JavaScript</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        font-weight: bold;
+        background-color: black;
+        margin: 0;
+        padding: 20px;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .consoleContainer {
+        font-family: sans-serif;
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .consoleContainer .cc {
+        background-color: rgba(101, 100, 100, 0.367);
+        padding: 10px;
+        font-size: 25px;
+        color: whitesmoke;
+        font-weight: 1;
+        border-radius: 5px;
+        box-shadow: 1px 1px #ccc;
+        margin: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+
+      /* Responsive */
+
+      @media (max-width: 600px) {
+        .consoleContainer {
+          padding: 3px;
+          margin: 5px;
+        }
+        .consoleContainer .cc {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="consoleContainer">
+      <span
+        style="
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.799);
+          padding: 10px;
+          font-weight: 200;
+        "
+        >JavaScript logs will be printed here.....</span
+      >
+      <div class="cc"></div>
+    </div>
+
+    <script>
+      const cc = document.querySelector(".consoleContainer .cc");
+      //-------------------------------------------------------------------------
+
+      //Array is a data structure that can hold multiple values at once. It is a collection of elements, each identified by an index or key. In JavaScript, arrays are used to store lists of data.
+
+      //Creating an array and assessing elements
+
+      //   let fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
+      //   let numbers = [1, 2, 3, 4, 5];
+      //   let mixed = ["Hello", 42, true, null, undefined];
+      //   let empty = []; // An empty array
+
+      // ---------Accessing Elements -------------
+      //   cc.textContent = `Fruits: ${fruits[0]}, ${fruits[2]}, ${fruits[4]}\n`;
+      //   cc.textContent += `Numbers: ${numbers[1]}, ${numbers[3]}\n`;
+      //   cc.textContent += `Mixed: ${mixed[0]}, ${mixed[1]}, ${mixed[2]}\n`;
+      //   cc.textContent += `Empty: ${empty.length}\n`;
+
+      // ---------Modifying Elements -------------
+      //  cc.textContent = `Original Fruits: ${fruits}\n\n`;
+      //  fruits[1] = "Blueberry"; // Changing Banana to Blueberry
+      //  cc.textContent += `Modified Fruits: ${fruits}\n`;
+
+      // ---------Negative Indices -------------
+      //  cc.textContent = `Original Fruits: ${fruits}\n\n`;
+      //  cc.textContent += `Last Fruit: ${fruits[fruits.length - 1]}\n`; // Accessing the last element using length
+      //  cc.textContent += `Second Last Fruit: ${fruits[fruits.length - 2]}\n`; // Accessing the second last element using length
+
+      // ---------Array Length -------------
+      //  cc.textContent = `Number of Fruits: ${fruits.length}\n`;
+
+      // ---------Arrays Methods -------------
+      //  cc.textContent = `Original Fruits: ${fruits}\n\n`;
+      //  cc.textContent += `Fruits (after push): ${fruits.push("Pineapple")}\n${fruits}\n\n`; // Adding an element to the end
+      //  cc.textContent += `Fruits (after pop): ${fruits.pop()}\n${fruits}\n\n`; // Removing the last element
+      //  cc.textContent += `Fruits (after shift): ${fruits.shift()}\n${fruits}\n\n`; // Removing the first element
+      //  cc.textContent += `Fruits (after unshift): ${fruits.unshift("Grape")}\n${fruits}\n\n`; // Adding an element to the beginning
+
+      //----------------
+      //   //push until array elements are 20 , operation like first 1 push then 2 elements , then 4 and 8 so on until 20 elements are there in the array
+      //   const arr1 = [1];
+
+      //   while (arr1.length < 20) {
+      //     const currentLength = arr1.length;
+
+      //     for (let i = 0; i < currentLength && arr1.length < 20; i++) {
+      //       arr1.push(i + 1);
+      //     }
+      //     function printArrayElements(arr1) {
+      //       for (let i = 0; i < arr1.length; i++) {
+      //         cc.textContent += `${arr1[i]}, `;
+      //       }
+      //       cc.textContent += `\n`;
+      //     }
+
+      //     printArrayElements(arr1);
+      //   }
+
+      //--------------------------------------
+      // // includes(), indexOf(), lastIndexOf(), slice(), splice(), concat(), join(), reverse(), sort(), filter(), map(), reduce(), forEach() etc.
+
+      // const fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
+
+      // cc.textContent = `Fruits: ${fruits}\n\n`;
+
+      // cc.textContent += `Does the array include 'Mango'? ${fruits.includes("Mango")}\n\n`;
+
+      // cc.textContent += `Index of 'Cherry': ${fruits.indexOf("Cherry")}\n\n`;
+
+      // cc.textContent += `Last index of 'Banana': ${fruits.lastIndexOf("Banana")}\n\n`;
+
+      // cc.textContent += `Slice (1, 4): ${fruits.slice(1, 4)}\n\n`;
+
+      // cc.textContent += `Splice (2, 1, 'Grapes'): ${fruits.splice(2, 1, "Grapes")}\n${fruits}\n\n`;
+
+      // cc.textContent += `Concatenated with ['Pineapple', 'Kiwi']: ${fruits.concat(["Pineapple", "Kiwi"])}\n\n`;
+
+      // cc.textContent += `Joined with ', ': ${fruits.join(", ")}\n\n`;
+
+      // cc.textContent += `Reversed: ${fruits.reverse()}\n\n`;
+
+      // cc.textContent += `Sorted: ${fruits.sort()}\n\n`;
+
+      // cc.textContent += `Filtered (fruits starting with 'B'): ${fruits.filter(fruit => fruit.startsWith("B"))}\n\n`;
+
+      // cc.textContent += `Mapped (fruits in uppercase): ${fruits.map(fruit => fruit.toUpperCase())}\n\n`;
+
+      // cc.textContent += `Reduced (concatenated string): ${fruits.reduce((acc, fruit) => acc + fruit + " ", "")}\n\n`;
+
+      // cc.textContent += `ForEach (printing each fruit):\n`;
+      // fruits.forEach(fruit => {
+      //   cc.textContent += `${fruit}\n`;
+      // });
+
+
+      //--------------
+
+      // //find and return index of an element in an array using a function
+      // const arr = [10, 20, 30, 40, 50];
+      // const findElement = (element) => {
+      //   const index = arr.indexOf(element);
+      //   return index !== -1 ? index : "Element not found";
+      // };
+
+      // var res = findElement(20);
+      // cc.textContent += ` ${res}\n`;
+
+      //------------
+
+      const arr = [20, 30, 40, 50];
+      const func = (num1, num2, num3) => {
+
+        cc.textContent += `Index of ${num1} is ${arr.indexOf(num1)}\n\n`;
+        arr.push(num2);
+        arr.unshift(num3);
+        cc.textContent += `Array after push and unshift: ${arr}\n`;
+      };
+
+      func(30, 60, 10);
+
+      //------------
+
+      
+      //------------
+      // -------------------------------------------------------------------------
+    </script>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables and Operators</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        font-weight: bold;
+        background-color: black;
+        color: goldenrod;
+        margin: 0;
+        padding: 20px;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .consoleContainer {
+        font-family: sans-serif;
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .consoleContainer .cc {
+        background-color: rgba(160, 158, 158, 0.367);
+        padding: 10px;
+        font-size: 16px;
+        color: #f3f70d;
+        border-radius: 5px;
+        box-shadow: 1px 1px #ccc;
+        margin: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+
+      /* .consoleContainer .cc span {
+        font-size: 10px;
+        color: #ccc;
+        font-family: sans-serif;
+      } */
+
+
+
+
+      /* Responsive */
+
+      @media (max-width: 600px) {
+
+        .consoleContainer {
+          padding: 3px;
+          margin: 5px;
+        }
+        .consoleContainer .cc {
+          font-size: 14px;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <!-- What is computer : A computer is an electronic device that processes data and performs calculations -->
+
+    <div class="consoleContainer">
+      <div class="cc">
+        <span style="font-size: 14px; color: rgba(255, 255, 255, 0.799);">JavaScript logs will be printed here.....</span>
+      </div>
+    </div>
+
+    <script>
+      //-------------------------------------------------------------------------------
+
+      // //Alert:
+      // alert("You are welcome to my website!");
+
+
+
+
+      //-------------------------------------------------------------------------------
+
+      // // Printing Hello, World! to the HTML Body using JavaScript
+      // const consoleContainer = document.querySelector('.cc1');
+      // consoleContainer.textContent = "Hello, World!";
+      // console.log("Hello, World!");
+
+
+
+      //-------------------------------------------------------------------------------
+
+      //Var , let and const:
+      // var name = "Aryan";
+      // let age = 20;
+      // const country = "India";
+
+      // const consoleContainer = document.querySelector('.cc');
+      // consoleContainer.textContent = `Name: ${name}\nAge: ${age}\nCountry: ${country}`;
+
+
+      //-------------------------------------------------------------------------------
+
+      // //Try printing an error on the page using console.error() method
+      // const consoleContainer3 = document.querySelector('.cc3');
+      // try {
+      //     // Simulating an error
+      //     throw new Error("This is a simulated error!");
+      // } catch (error) {
+      //     console.error(error);
+      //     consoleContainer3.textContent = `Error: ${error.message}`;
+      // }
+
+      // var name = "Aryan";
+      // let age = 20;
+      // const country = "India";
+
+      //-------------------------------------------------------------------------------
+
+
+      //Performing basic operations using JavaScript
+      var a = 10;
+      var b = 20;
+
+      const consoleContainer = document.querySelector('.cc');
+
+      // //  Arithmetic Operations :
+    //   consoleContainer.textContent = `( ${a} + ${b}) -> ${a + b}
+    //                                 \n (${a} - ${b}) -> ${a - b}
+    //                                 \n (${a} * ${b}) -> ${a * b}
+    //                                 \n (${a} / ${b}) -> ${a / b}
+    //                                 \n (${a} % ${b}) -> ${a % b}
+    //                                 \n (${a} ** ${b}) -> ${a ** b}`;
+
+      // // Comparison Operations :
+      // consoleContainer.textContent = ` (${a} == ${b}) -> ${a == b}
+      //                               \n (${a} != ${b}) -> ${a != b}
+      //                               \n (${a} === ${b}) -> ${a === b}
+      //                               \n (${a} !== ${b}) -> ${a !== b}
+      //                               \n (${a} > ${b}) -> ${a > b}
+      //                               \n (${a} < ${b}) -> ${a < b}
+      //                               \n (${a} >= ${b}) -> ${a >= b}
+      //                               \n (${a} <= ${b}) -> ${a <= b}`;
+
+      // // Logical Operations :
+    //   consoleContainer.textContent = ` (${a} > 5 && ${b} < 30) -> ${a > 5 && b < 30}
+    //                                 \n (${a} > 15 || ${b} < 30) -> ${a > 15 || b < 30}
+    //                                 \n (!(${a} > 5)) -> ${!(a > 5)}`;
+
+    // Nullish operators (??) and optional chaining 
+    // let name = "Aryan";
+    // let newName = name ?? "Default Name"; // If name is null or undefined, newName will be "Default Name"
+    // consoleContainer.textContent = `Name: ${newName}`;
+
+      // // Increment and Decrement Operations :
+    //   consoleContainer.textContent = ` (${a}++) -> ${a++}
+    //                                 \n (${a}--) -> ${a--}
+    //                                 \n (++${a}) -> ${++a}
+    //                                 \n (--${a}) -> ${--a}`;
+
+      // // Assignments Operations :
+    //   consoleContainer.textContent = ` (${a} += 5) -> ${a += 5}
+    //                                 \n (${a} -= 3) -> ${a -= 3}
+    //                                 \n (${a} *= 2) -> ${a *= 2}
+    //                                 \n (${a} /= 4) -> ${a /= 4}
+    //                                 \n (${a} %= 3) -> ${a %= 3}
+    //                                 \n (${a} **= 2) -> ${a **= 2}`;
+
+    
+    
+    // consoleContainer.textContent = ` (typeof ${a}) -> ${typeof a}
+    //                               \n (typeof ${b}) -> ${typeof b}`;
+
+    //-------------------------------------------------------------------------------
+
+    </script>
+  </body>
+</html>
