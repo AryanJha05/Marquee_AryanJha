@@ -42,6 +42,12 @@
         white-space: pre-wrap;
       }
 
+      /* Scroll in .cc */
+      .consoleContainer .cc {
+        overflow-y: auto;
+        max-height: 100vh;
+      }
+
       /* Responsive */
 
       @media (max-width: 600px) {
@@ -164,7 +170,6 @@
       //   cc.textContent += `${fruit}\n`;
       // });
 
-
       //--------------
 
       // //find and return index of an element in an array using a function
@@ -179,21 +184,191 @@
 
       //------------
 
-      const arr = [20, 30, 40, 50];
-      const func = (num1, num2, num3) => {
+      // const arr = [20, 30, 40, 50];
+      // const func = (num1, num2, num3) => {
 
-        cc.textContent += `Index of ${num1} is ${arr.indexOf(num1)}\n\n`;
-        arr.push(num2);
-        arr.unshift(num3);
-        cc.textContent += `Array after push and unshift: ${arr}\n`;
-      };
+      //   cc.textContent += `Index of ${num1} is ${arr.indexOf(num1)}\n\n`;
+      //   arr.push(num2);
+      //   arr.unshift(num3);
+      //   cc.textContent += `Array after push and unshift: ${arr}\n`;
+      // };
 
-      func(30, 60, 10);
+      // func(30, 60, 10);
+
+      //--------------
+
+      // // Find method in array using a function:
+      // const arr = [
+      //   { name: "Aryan", age: 46, country: "India" },
+      //   { name: "Swapnil", age: 30, country: "Thailand" },
+      //   { name: "Mahipal", age: 8, country: "Uganda" },
+      //   { name: "Bhupendra", age: 50, country: "Kenya" },
+      // ];
+
+      // const findPersonByCountry = (country) => {
+      //   const person = arr.find((p) => p.country === country);
+      //   return person ? person : "Person not found";
+      // };
+
+      // cc.textContent += `Finding person from Thailand: ${JSON.stringify(
+      //   findPersonByCountry("Thailand"),
+      // )}\n\n`;
+
+      // //--------------
+
+      // const findPersonByAge = (age) => {
+      //   const person = arr.find((p) => p.age > age);
+      //   return person
+      //     ? (cc.textContent += `Finding person with age greater than 40: ${JSON.stringify(person)}`)
+      //     : "Person not found";
+      // };
+
+      // cc.textContent += `Finding person with age greater than 40: ${JSON.stringify(
+      //   findPersonByAge(40),
+      // )}\n\n`;
+
+      // //--------------
+
+      // const findPersonByageandCountry = (age, country) => {
+      //   const person = arr.find((p) => p.age > age && p.country === country);
+      //   return person ? person : "Person not found";
+      // };
+
+      // cc.textContent += `Finding person with age greater than 40 and country 'India': ${JSON.stringify(
+      //   findPersonByageandCountry(40, "India"),
+      // )}\n\n`;
+
+      // //--------------
+      // const findPersonUnderAge = () => {
+      //   const person = arr.find((p) => p.age < 18);
+      //   return person ? person : "Person not found";
+      // };
+
+      // cc.textContent += `Finding person with age less than 18: ${JSON.stringify(
+      //   findPersonUnderAge(),
+      // )}\n\n`;
+      // //--------------
+
+      // -------------------------------------------------------------------------
+
+      // Array Traversal :
+
+      // const arr1 = [
+      //   { name: "Aryan", age: 46, country: "India" },
+      //   { name: "Swapnil", age: 30, country: "Thailand" },
+      //   { name: "Mahipal", age: 17, country: "Uganda" },
+      //   { name: "Bhupendra", age: 50, country: "Kenya" },
+      //   { name: "Bhupendra", age: 50, country: "Kenya" },
+      // ];
+
+      //------------
+      //by forEach loop
+      // cc.textContent += `Traversing array using forEach loop:\n`;
+      // arr1.forEach((element) => {
+      //    if(element.age >= 18){
+      //     cc.textContent += `${element.name}\n`;
+      //    }
+      //    else{
+      //     cc.textContent += `${element.name} -> (👶Bachha hai ye toh )\n`;
+      //    }
+      // });
+
+      //-----------------
+      // cc.textContent += `Persons from Kenya:\n`;
+      // arr1.forEach((element, idx, arr) => {
+      //   if (element.country === "Kenya") {
+      //     cc.textContent += `${idx}: ${element.name} is from ${element.country}\n`;
+      //   }
+      // });
+
+      // cc.textContent += `\n`;
+
+      // cc.textContent += `Persons above 20 years old:\n`;
+      // arr1.forEach((element, idx, arr) => {
+      //   if (element.age > 20) {
+      //     cc.textContent += `${idx}: ${element.name} is above 20 years old\n`;
+      //   }
+      // });
+
+      //-------------------
+
+      // const arr = [1,2,3,4,5,6,7,8,9,10];
+
+      // const sumofNumbers = (arr) => {
+      //   let sum = 0;
+      //   arr.forEach((num) => {
+      //     sum += num;
+      //   });
+      //   return sum;
+      // };
+
+      // const evenNumbers = (arr) => {
+      //   arr.forEach((num) => {
+      //     if (num % 2 === 0) {
+      //       cc.textContent += `${num} `;
+      //     }
+      //   });
+      // };
+
+      // cc.textContent += `Sum of numbers in the array: ${sumofNumbers(arr)}\n`;
+      // cc.textContent += `Even numbers in the array: `;
+      // evenNumbers(arr);
+      // cc.textContent += `\n`;
 
       //------------
 
-      
-      //------------
+      //Map :
+      //-------------
+      const arr1 = [
+        { name: "Aryan", age: 46, country: "India", salary: 50000 },
+        { name: "Swapnil", age: 30, country: "Thailand", salary: 60000 },
+        { name: "Mahipal", age: 17, country: "Uganda", salary: 40000 },
+        { name: "Bhupendra", age: 50, country: "Kenya", salary: 70000 },
+        { name: "Bhupendra", age: 50, country: "Kenya", salary: 70000 },
+      ];
+
+      const namesInUpperCase = arr1.map((person) => person.name.toUpperCase());
+
+      console.log(namesInUpperCase);
+
+      cc.textContent += `Names in uppercase:\n`;
+      namesInUpperCase.forEach((name) => {
+        cc.textContent += `${name}\n`;
+      });
+
+      cc.textContent += `\n`;
+      const arr = [1, 2, 3, 4, 5];
+
+      const doubleNumbers = arr.map((num) => {
+        return num * 2;
+      });
+      const plusThousand = arr.map((num) => {
+        return num + 1000;
+      });
+      const agesArray = arr1.map((person) => person.age);
+      const IncreasedSalariesArray = arr1.map((person) => person.salary + 200);
+
+      cc.textContent += `Original array: ${arr}\n\n`;
+      cc.textContent += `Doubled array: ${doubleNumbers}\n\n`;
+      cc.textContent += `Array with 1000 added: ${plusThousand}\n\n`;
+      cc.textContent += `Array of Ages: ${agesArray}\n\n`;
+      cc.textContent += `Array of Increased Salaries: ${IncreasedSalariesArray}\n\n`;
+
+      //Convert array of string to array of objects using map
+      const namesArray = ["Aryan", "Swapnil", "Mahipal", "Bhupendra"];
+      const namesToObjects = namesArray.map((name, index) => {
+        return { id: index + 1, name: name };
+      });
+
+      cc.textContent += `Names as objects:\n`;
+      namesToObjects.forEach((obj) => {
+        cc.textContent += `${obj.id}: ${obj.name}\n`;
+      });
+
+      console.log(namesToObjects);
+
+      //---------------
+
       // -------------------------------------------------------------------------
     </script>
   </body>
