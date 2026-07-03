@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String in JavaScript</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        font-weight: bold;
+        background-color: black;
+        margin: 0;
+        padding: 20px;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .consoleContainer {
+        font-family: sans-serif;
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .consoleContainer .cc {
+        background-color: rgba(101, 100, 100, 0.367);
+        padding: 10px;
+        font-size: 18px;
+        color: whitesmoke;
+        font-weight: 1;
+        border-radius: 5px;
+        box-shadow: 1px 1px #ccc;
+        margin: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+
+      /* Scroll in .cc */
+      .consoleContainer .cc {
+        overflow-y: auto;
+        max-height: 100vh;
+      }
+
+      /* Responsive */
+
+      @media (max-width: 600px) {
+        .consoleContainer {
+          padding: 3px;
+          margin: 5px;
+        }
+        .consoleContainer .cc {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="consoleContainer">
+      <span
+        style="
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.799);
+          padding: 10px;
+          font-weight: 200;
+        "
+        >JavaScript logs will be printed here.....</span
+      >
+      <div class="cc"></div>
+    </div>
+
+    <script>
+      const cc = document.querySelector(".consoleContainer .cc");
+      //------------------------------------------------------------------
+      //String Methods : chartAt(), charCodeAt(), concat(), endsWith(), includes(), indexOf(), lastIndexOf(), match(), repeat(), replace(), search(), slice(), split(), startsWith(), substr(), substring(), toLowerCase(), toUpperCase(), trim()
+
+      // ===============================================
+      // String Methods in JavaScript
+      // ===============================================
+
+      let str = "  Hello JavaScript World  ";
+
+      console.log("Original String:", str);
+
+      // 1. charAt() : Returns the character at a specified index in a string.
+      console.log("charAt(2):", str.charAt(2));
+
+      // 2. charCodeAt() : Returns the Unicode of the character at a specified index in a string.
+      console.log("charCodeAt(2):", str.charCodeAt(2));
+
+      // 3. concat() : Combines two or more strings and returns a new string.
+      let str2 = "Programming";
+      console.log("concat():", str.trim().concat(" ", str2));
+
+      // 4. endsWith() : Determines whether a string ends with the characters of a specified string.
+      console.log("endsWith('World  '):", str.endsWith("World  "));
+
+      // 5. includes() : Determines whether one string may be found within another string.
+      console.log("includes('Java'):", str.includes("Java"));
+
+      // 6. indexOf() : Returns the index of the first occurrence of a specified value in a string.
+      console.log("indexOf('Java'):", str.indexOf("Java"));
+
+      // 7. lastIndexOf() : Returns the index of the last occurrence of a specified value in a string.
+      let text = "apple banana apple mango";
+      console.log("lastIndexOf('apple'):", text.lastIndexOf("apple"));
+
+      // 8. match() : Searches a string for a match against a regular expression and returns the result.
+      let sentence = "I love JavaScript";
+      console.log("match('Java'):", sentence.match("Java"));
+
+      // 9. repeat() : Returns a new string with a specified number of copies of an existing string.
+      console.log("repeat(3):", "Hi ".repeat(3));
+
+      // 10. replace() : Replaces a specified value with another value in a string.
+      console.log("replace():", sentence.replace("JavaScript", "Python"));
+
+      // 11. search() : Searches a string for a specified value and returns the position of the match.
+      console.log("search('Java'):", sentence.search("Java"));
+
+      // 12. slice() : Extracts a part of a string and returns the extracted part.
+      console.log("slice(2, 8):", sentence.slice(2, 8));
+
+      // 13. split() : Splits a string into an array of substrings.
+      let fruits = "Apple,Banana,Mango";
+      console.log("split(','):", fruits.split(","));
+
+      // 14. startsWith() : Determines whether a string starts with the characters of a specified string.
+      console.log("startsWith('I'):", sentence.startsWith("I"));
+
+      // 15. substr()  (Deprecated but still works) : Returns a portion of a string, starting at the specified index and extending for a given number of characters.
+      console.log("substr(2, 5):", sentence.substr(2, 5));
+
+      // 16. substring() : Returns the part of a string between the specified indices.
+      console.log("substring(2, 8):", sentence.substring(2, 8));
+
+      // 17. toLowerCase() : Converts a string to lowercase letters.
+      console.log("toLowerCase():", sentence.toLowerCase());
+
+      // 18. toUpperCase() : Converts a string to uppercase letters.
+      console.log("toUpperCase():", sentence.toUpperCase());
+
+      // 19. trim() : Removes whitespace from both ends of a string.
+     console.log("trim():", str.trim());
+
+
+      //------------------------------------------------------------------
+
+      let employees = [
+        {
+          name: "bhupendr",
+          salary: 70,
+          age: 50,
+          country: "india",
+          department: "IT",
+          content_liked: ["food", "Travel_Vlogs", "art", "storytelling"],
+          products_in_cart: [
+            { Pname: "Shirt", cost: 500 },
+            { Pname: "Shoes", cost: 2500 },
+            { Pname: "Watch", cost: 3500 },
+          ],
+        },
+        {
+          name: "rohan",
+          salary: 50,
+          age: 14,
+          country: "london",
+          department: "Finance",
+          content_liked: ["daily_vlogs", "science", "art", "motivational"],
+          products_in_cart: [
+            { Pname: "Shirt", cost: 500 },
+            { Pname: "Headphones", cost: 1800 },
+          ],
+        },
+        {
+          name: "kartik",
+          salary: 3,
+          age: 2,
+          country: "america",
+          department: "HR",
+          content_liked: ["sports", "politics", "online_gaming", "science"],
+          products_in_cart: [
+            { Pname: "Football", cost: 1200 },
+            { Pname: "Shoes", cost: 2500 },
+          ],
+        },
+        {
+          name: "suraj",
+          salary: 2,
+          age: 19,
+          country: "russia",
+          department: "Finance",
+          content_liked: ["Travel_Vlogs", "bike", "politics", "food"],
+          products_in_cart: [
+            { Pname: "Bike Helmet", cost: 2200 },
+            { Pname: "Watch", cost: 3500 },
+          ],
+        },
+        {
+          name: "aryan",
+          salary: 1,
+          age: 70,
+          country: "japan",
+          department: "HR",
+          content_liked: ["history", "motivational", "news", "science"],
+          products_in_cart: [
+            { Pname: "Books", cost: 900 },
+            { Pname: "Laptop", cost: 65000 },
+          ],
+        },
+        {
+          name: "aryan",
+          salary: 88,
+          age: 40,
+          country: "japan",
+          department: "IT",
+          content_liked: ["coding", "technology", "science", "art"],
+          products_in_cart: [
+            { Pname: "Laptop", cost: 65000 },
+            { Pname: "Mouse", cost: 700 },
+            { Pname: "Keyboard", cost: 1500 },
+          ],
+        },
+        {
+          name: "jatin",
+          salary: 100,
+          age: 12,
+          country: "russia",
+          department: "HR",
+          content_liked: ["gaming", "sports", "anime", "online_gaming"],
+          products_in_cart: [
+            { Pname: "Gaming Mouse", cost: 2200 },
+            { Pname: "Headphones", cost: 1800 },
+          ],
+        },
+        {
+          name: "aaditya",
+          salary: 20,
+          age: 19,
+          country: "india",
+          department: "Marketing",
+          content_liked: [
+            "marketing",
+            "business",
+            "motivational",
+            "storytelling",
+          ],
+          products_in_cart: [
+            { Pname: "Notebook", cost: 150 },
+            { Pname: "Pen", cost: 50 },
+            { Pname: "Shirt", cost: 500 },
+          ],
+        },
+        {
+          name: "sachi",
+          salary: 1,
+          age: 2,
+          country: "uganda",
+          department: "Finance",
+          content_liked: ["cartoons", "food", "science", "daily_vlogs"],
+          products_in_cart: [
+            { Pname: "Chocolate", cost: 100 },
+            { Pname: "Books", cost: 900 },
+          ],
+        },
+        {
+          name: "khushi",
+          salary: 35,
+          age: 99,
+          country: "brazil",
+          department: "IT",
+          content_liked: ["Travel_Vlogs", "dance", "food", "art"],
+          products_in_cart: [
+            { Pname: "Dress", cost: 1800 },
+            { Pname: "Watch", cost: 3500 },
+            { Pname: "Shoes", cost: 2500 },
+          ],
+        },
+        {
+          name: "parul",
+          salary: 500,
+          age: 34,
+          country: "jamaica",
+          department: "CEO",
+          content_liked: [
+            "leadership",
+            "business",
+            "technology",
+            "motivational",
+          ],
+          products_in_cart: [
+            { Pname: "Laptop", cost: 65000 },
+            { Pname: "Watch", cost: 3500 },
+            { Pname: "Phone", cost: 45000 },
+          ],
+        },
+      ];
+
+
+       employees.forEach((emp) => {
+        emp.salary = emp.salary * 100;
+      });
+      let uniqueContentLike = [ ...new Set(employees.flatMap((emp) => emp.content_liked))];
+
+      let contentSpendObject = {};
+      uniqueContentLike.forEach((content, index) => {
+        contentSpendObject[content] = `${index + 1}%`;
+      })
+
+      //console.log(contentSpendObject);
+
+      // 1. find and print the employee can spend in the content liked like first sum the all persentage of content liked by employee and so that will be the percentage would be the sum of the length of the countent string salary that employee can spend and then reduce that much ammount of spending from the salary thn print that for every employee that how much will be left :
+
+    //   employees.forEach((emp) => {
+    //     let totalPercentage = emp.content_liked.reduce((sum, content) => {
+    //       return sum + content.length;
+    //     }, 0); 
+        
+    //     let amountToSpend = (emp.salary * totalPercentage) / 100;
+    //     let remainingSalary = emp.salary - amountToSpend;
+    //     console.log(`${emp.name} (${emp.salary}) \n\tspend : ${amountToSpend}\n\twill be left  :${remainingSalary}\n\n`);
+    //   });
+
+    </script>
+  </body>
+</html>

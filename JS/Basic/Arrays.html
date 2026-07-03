@@ -32,7 +32,7 @@
       .consoleContainer .cc {
         background-color: rgba(101, 100, 100, 0.367);
         padding: 10px;
-        font-size: 25px;
+        font-size: 18px;
         color: whitesmoke;
         font-weight: 1;
         border-radius: 5px;
@@ -56,7 +56,7 @@
           margin: 5px;
         }
         .consoleContainer .cc {
-          font-size: 18px;
+          font-size: 15px;
         }
       }
     </style>
@@ -319,57 +319,725 @@
 
       //Map :
       //-------------
-      const arr1 = [
-        { name: "Aryan", age: 46, country: "India", salary: 50000 },
-        { name: "Swapnil", age: 30, country: "Thailand", salary: 60000 },
-        { name: "Mahipal", age: 17, country: "Uganda", salary: 40000 },
-        { name: "Bhupendra", age: 50, country: "Kenya", salary: 70000 },
-        { name: "Bhupendra", age: 50, country: "Kenya", salary: 70000 },
-      ];
+      // const arr1 = [
+      //   { name: "Aryan", age: 46, country: "India", salary: 50000 },
+      //   { name: "Swapnil", age: 30, country: "Thailand", salary: 60000 },
+      //   { name: "Mahipal", age: 17, country: "Uganda", salary: 40000 },
+      //   { name: "Bhupendra", age: 50, country: "Kenya", salary: 70000 },
+      //   { name: "Bhupendra", age: 50, country: "Kenya", salary: 70000 },
+      // ];
 
-      const namesInUpperCase = arr1.map((person) => person.name.toUpperCase());
+      // const namesInUpperCase = arr1.map((person) => person.name.toUpperCase());
 
-      console.log(namesInUpperCase);
+      // console.log(namesInUpperCase);
 
-      cc.textContent += `Names in uppercase:\n`;
-      namesInUpperCase.forEach((name) => {
-        cc.textContent += `${name}\n`;
-      });
+      // cc.textContent += `Names in uppercase:\n`;
+      // namesInUpperCase.forEach((name) => {
+      //   cc.textContent += `${name}\n`;
+      // });
 
-      cc.textContent += `\n`;
-      const arr = [1, 2, 3, 4, 5];
+      // cc.textContent += `\n`;
+      // const arr = [1, 2, 3, 4, 5];
 
-      const doubleNumbers = arr.map((num) => {
-        return num * 2;
-      });
-      const plusThousand = arr.map((num) => {
-        return num + 1000;
-      });
-      const agesArray = arr1.map((person) => person.age);
-      const IncreasedSalariesArray = arr1.map((person) => person.salary + 200);
+      // const doubleNumbers = arr.map((num) => {
+      //   return num * 2;
+      // });
+      // const plusThousand = arr.map((num) => {
+      //   return num + 1000;
+      // });
+      // const agesArray = arr1.map((person) => person.age);
+      // const IncreasedSalariesArray = arr1.map((person) => person.salary + 200);
 
-      cc.textContent += `Original array: ${arr}\n\n`;
-      cc.textContent += `Doubled array: ${doubleNumbers}\n\n`;
-      cc.textContent += `Array with 1000 added: ${plusThousand}\n\n`;
-      cc.textContent += `Array of Ages: ${agesArray}\n\n`;
-      cc.textContent += `Array of Increased Salaries: ${IncreasedSalariesArray}\n\n`;
+      // cc.textContent += `Original array: ${arr}\n\n`;
+      // cc.textContent += `Doubled array: ${doubleNumbers}\n\n`;
+      // cc.textContent += `Array with 1000 added: ${plusThousand}\n\n`;
+      // cc.textContent += `Array of Ages: ${agesArray}\n\n`;
+      // cc.textContent += `Array of Increased Salaries: ${IncreasedSalariesArray}\n\n`;
 
-      //Convert array of string to array of objects using map
-      const namesArray = ["Aryan", "Swapnil", "Mahipal", "Bhupendra"];
-      const namesToObjects = namesArray.map((name, index) => {
-        return { id: index + 1, name: name };
-      });
+      // //Convert array of string to array of objects using map
+      // const namesArray = ["Aryan", "Swapnil", "Mahipal", "Bhupendra"];
+      // const namesToObjects = namesArray.map((name, index) => {
+      //   return { id: index + 1, name: name };
+      // });
 
-      cc.textContent += `Names as objects:\n`;
-      namesToObjects.forEach((obj) => {
-        cc.textContent += `${obj.id}: ${obj.name}\n`;
-      });
+      // cc.textContent += `Names as objects:\n`;
+      // namesToObjects.forEach((obj) => {
+      //   cc.textContent += `${obj.id}: ${obj.name}\n`;
+      // });
 
-      console.log(namesToObjects);
+      // console.log(namesToObjects);
 
       //---------------
 
+      // let arr = [
+      //   {
+      //     name: "bhupendr",
+      //     salary: 70,
+      //     age: 50,
+      //     country: "india",
+      //     department: "IT",
+      //   },
+      //   {
+      //     name: "rohan",
+      //     salary: 50,
+      //     age: 14,
+      //     country: "london",
+      //     department: "Finance",
+      //   },
+      //   {
+      //     name: "kartik",
+      //     salary: 3,
+      //     age: 2,
+      //     country: "amarica",
+      //     department: "HR",
+      //   },
+      //   {
+      //     name: "suraj",
+      //     salary: 2,
+      //     age: 19,
+      //     country: "russia",
+      //     department: "Finance",
+      //   },
+      //   {
+      //     name: "aryan",
+      //     salary: 1,
+      //     age: 70,
+      //     country: "japan",
+      //     department: "HR",
+      //   },
+      //   {
+      //     name: "aryan",
+      //     salary: 88,
+      //     age: 40,
+      //     country: "japan",
+      //     department: "IT",
+      //   },
+      //   {
+      //     name: "jatin",
+      //     salary: 100,
+      //     age: 12,
+      //     country: "russia",
+      //     department: "HR",
+      //   },
+
+      //   {
+      //     name: "aaditya",
+      //     salary: 20,
+      //     age: 19,
+      //     country: "india",
+      //     department: "Marketing",
+      //   },
+      //   {
+      //     name: "sachi",
+      //     salary: 1,
+      //     age: 2,
+      //     country: "uganda",
+      //     department: "Finance",
+      //   },
+      //   {
+      //     name: "khushi",
+      //     salary: 35,
+      //     age: 99,
+      //     country: "brazil",
+      //     department: "IT",
+      //   },
+      //   {
+      //     name: "parul",
+      //     salary: 500,
+      //     age: 34,
+      //     country: "zamaika",
+      //     department: "CEO",
+      //   },
+      // ];
+
+      //-------------------------
+
+      // 1. Employee is From the HR department, his/her name is XYZ and he is India.
+
+      // let index = 1
+      // arr.forEach((element) => {
+      //   if(element.department === "HR" && element.country === "india"){
+      //     cc.textContent += `${index++}. Employee is from the HR department, his/her name is ${element.name} and he/she is from ${element.country}\n`;
+      //   }
+      // })
+
+      //-------------------------
+
+      // 2. Count each Department Employees and print the count of each department employees.
+      // let Itcnt = 0;
+      // let Hrcnt = 0;
+      // let Financecnt = 0;
+      // let Marketingcnt = 0;
+      // let CEOcnt = 0;
+
+      // arr.forEach((element) => {
+      //   if(element.department === "IT") {
+      //     Itcnt++;
+      //   } else if (element.department === "HR") {
+      //     Hrcnt++;
+      //   } else if (element.department === "Finance") {
+      //     Financecnt++;
+      //   } else if (element.department === "Marketing") {
+      //     Marketingcnt++;
+      //   } else if (element.department === "CEO") {
+      //     CEOcnt++;
+      //   }
+      // })
+
+      // cc.textContent += `IT: ${Itcnt}\n`;
+      // cc.textContent += `HR: ${Hrcnt}\n`;
+      // cc.textContent += `Finance: ${Financecnt}\n`;
+      // cc.textContent += `Marketing: ${Marketingcnt}\n`;
+      // cc.textContent += `CEO: ${CEOcnt}\n`;
+
+      //-------------------------
+
+      //3. total Salary of each Country employees and print the total salary of each country employees.
+
+      // let indiaSalary = 0;
+      // let londonSalary = 0;
+      // let amaricaSalary = 0;
+      // let russiaSalary = 0;
+      // let japanSalary = 0;
+      // let ugandaSalary = 0;
+      // let brazilSalary = 0;
+      // let zamaikaSalary = 0;
+
+      // arr.forEach((element) => {
+      //   if(element.country === "india") {
+      //     indiaSalary += element.salary;
+      //   } else if (element.country === "london") {
+      //     londonSalary += element.salary;
+      //   } else if (element.country === "amarica") {
+      //     amaricaSalary += element.salary;
+      //   } else if (element.country === "russia") {
+      //     russiaSalary += element.salary;
+      //   } else if (element.country === "japan") {
+      //     japanSalary += element.salary;
+      //   } else if (element.country === "uganda") {
+      //     ugandaSalary += element.salary;
+      //   } else if (element.country === "brazil") {
+      //     brazilSalary += element.salary;
+      //   } else if (element.country === "zamaika") {
+      //     zamaikaSalary += element.salary;
+      //   }
+      // })
+
+      // cc.textContent += `India: ${indiaSalary}\n`;
+      // cc.textContent += `London: ${londonSalary}\n`;
+      // cc.textContent += `Amarica: ${amaricaSalary}\n`;
+      // cc.textContent += `Russia: ${russiaSalary}\n`;
+      // cc.textContent += `Japan: ${japanSalary}\n`;
+      // cc.textContent += `Uganda: ${ugandaSalary}\n`;
+      // cc.textContent += `Brazil: ${brazilSalary}\n`;
+      // cc.textContent += `Zamaika: ${zamaikaSalary}\n`;
+      // cc.textContent += `Total Salary of all countries: ${indiaSalary + londonSalary + amaricaSalary + russiaSalary + japanSalary + ugandaSalary + brazilSalary + zamaikaSalary}\n`;
+
+      //-------------------------
+
+      // //4. using map() method iterate through department array and in the each department add there all employees names whose belong to that department and print the each employee names of each department through department array.
+
+      // let department = [
+      //   { Dname: "IT", Dcode: 58, employees: [] },
+      //   { Dname: "HR", Dcode: 59, employees: [] },
+      //   { Dname: "Finance", Dcode: 60, employees: [] },
+      //   { Dname: "Marketing", Dcode: 61, employees: [] },
+      //   { Dname: "CEO", Dcode: 62, employees: [] },
+      // ];
+
+      // department.forEach((dept) => {
+      //   dept.employees = arr.map((emp) => {t
+      //     if (emp.department === dept.Dname) {
+      //       return { name: emp.name, salary: emp.salary, age: emp.age, country: emp.country };
+      //     }
+
+      //   }).filter((emp) => emp !== undefined);
+      //   cc.textContent += `\n${dept.Dname} : ${JSON.stringify(dept.employees.map((emp) => emp.name))}\n`;
+      // });
+      // console.log(department);
+      //-------------------------
+      // department.forEach((dept) => {
+      //   dept.employees = [];
+
+      //   arr.forEach((emp) => {
+      //     if (emp.department === dept.Dname) {
+      //       dept.employees.push({
+      //         name: emp.name,
+      //         salary: emp.salary,
+      //         age: emp.age,
+      //         country: emp.country,
+      //       });
+      //     }
+      //   });
+
+      //   cc.textContent += `\n${dept.Dname} : ${JSON.stringify(
+      //     dept.employees.map((emp) => emp.name),
+      //   )}\n`;
+      // });
+      // console.log(department);
+
+      //-------------------------
+
+      // //5. Make HR array and add all employees whose department is HR in that array and print the HR array.
+
+      // let HrArray = arr.filter((emp) => emp.department === "HR");
+      // cc.textContent += `\n HR Employees: ${JSON.stringify(HrArray.map((emp) => emp.name))}\n`;
+      // console.log(HrArray);
+
+      //-------------------------
+
+      //Filter : is used to create a new array with all elements that pass the test implemented by the provided function.
+
+      // let fillteredArray = arr.filter((emp) => emp.salary > 50);
+      // cc.textContent += `\n Employees with salary greater than 50: ${JSON.stringify(fillteredArray.map((emp) => emp.name))}\n`;
+      // console.log(fillteredArray);
+
+      //1. Find all employees whose salary is at least 10
+
+      // let salaryAtLeast10 = arr.filter((emp) => emp.salary >= 10 && emp.country === "india");
+      // cc.textContent += `\n Employees with salary at least 10: ${JSON.stringify(salaryAtLeast10.map((emp) => emp.name))}\n`;
+      // console.log(salaryAtLeast10);
+
+      //-------------------------
+      //2. Find all employees name start with 'S'
+
+      // let nameStartWithS = arr.filter((emp) => emp.name.startsWith("s") || emp.name.startsWith("S"));
+      // cc.textContent += `\n Employees with name starting with 'S': ${JSON.stringify(nameStartWithS.map((emp) => emp.name))}\n`;
+      // console.log(nameStartWithS);
+
+      //-------------------------
+      //3. using map() method iterate through department array and in the each department add there all employees names whose belong to that department and print the each employee names of each department through department array.
+
+      // department.forEach((dept) => {
+      //   dept.employees = arr.filter((emp) => emp.department === dept.Dname);
+      //   cc.textContent += `\n${dept.Dname} : ${JSON.stringify(dept.employees.map((emp) => emp.name))}\n`;
+      // });
+      // console.log(department);
+
+      //-------------------------
+      //4. add an object in the employees array with name that is the mixture of all the employee first letters, and salary would be the average of all the employees salary, and age would be random number between 20 and 60, and country would be anthing and the department would be the name that the all the country third letters string.
+
+      // let newName = arr.map((emp) => emp.name.charAt(0)).join("");
+      // // console.log(newName);
+      // let newDept = arr.map((emp) => emp.country.charAt(2)).join("");
+      // // console.log(newDept);
+
+      // let TotalSalary = 0;
+      // arr.forEach((emp) => {
+      //   TotalSalary += emp.salary;
+      // });
+      // let averageSalary = TotalSalary / arr.length;
+      // // console.log(averageSalary);
+
+      // let employee = {
+      //   name: newName,
+      //   salary: averageSalary,
+      //   age: Math.floor(Math.random() * (60 - 20 + 1)) + 20,
+      //   country: "india",
+      //   department: newDept,
+      // };
+
+      // arr.push(employee);
+      // console.log(employee);
+      // console.log(arr);
+
+      //------------------
+      //5. A array that conatain one emplyoee form every deaprtment whose object like {nameAndCountry : "Aryan India", salaryAndAge : "50 46", dept : "IT"}
+
+      // let employeeArray = department.map((dept) => {
+      //   let emp = arr.find((emp) => emp.department === dept.Dname);
+      //   //console.log(emp);
+      //   if (emp) {
+      //     return {
+      //       nameAndCountry: `${emp.name} ${emp.country}`,
+      //       salaryAndAge: `${emp.salary} ${emp.age}`,
+      //       dept: `${dept.Dname}`,
+      //     };
+      //   }
+      // })
+
+      // console.log(employeeArray);
+
+      //--------------------
+
+      //6. a array of object that container all the employee like dept_codes = [ {Ename: "", deptCode : 58}]
+
+      // let dept_codes = arr.map((emp) =>{
+
+      //   let dept = department.find((dept) => dept.Dname === emp.department);
+      //   if (dept) {
+      //     return { Ename: emp.name, deptCode: dept.Dcode };
+      //   }
+      // })
+
+      // console.log(dept_codes);
+
+      //--------------------------------
+
+      //Find Maximum :
+      // let nums = [10, 20, 30, 40, 50];
+      // let maxNum = nums.reduce((max, curr) => {return curr > max ? curr : max;});
+      // console.log(`Maximum number : ${maxNum}`);
+
+      //------------------------------------------------------------
+      // ==========================================
+      // PRACTICE #2 — Arrays & Array Methods
+      // ==========================================
+
+      // ------------------------------------------
+      // 1. Create an array of 7 numbers.
+      // Use filter() to get only even numbers.
+      // Use map() to square each even number.
+      // ------------------------------------------
+
+      // let numbers = [10, 15, 8, 21, 6, 11, 4];
+
+      // let result = numbers
+      //   .filter((num) => num % 2 === 0)
+      //   .map((num) => num * num);
+
+      // console.log(result);
+
+      // // ------------------------------------------
+      // // 2. You have:
+      // // let names = ["priya", "rahul", "amit", "sara"];
+      // // Use map() to uppercase each name.
+      // // ------------------------------------------
+
+      // let names = ["priya", "rahul", "amit", "sara"];
+
+      // let upperNames = names.map((name) => name.toUpperCase());
+
+      // console.log(upperNames);
+
+      // // ------------------------------------------
+      // // 3. Use reduce() to find the maximum number
+      // // in an array [34, 12, 89, 56, 23, 90, 7]
+      // // (without using Math.max())
+      // // ------------------------------------------
+
+      // let arr = [34, 12, 89, 56, 23, 90, 7];
+
+      // let max = arr.reduce((largest, current) => {
+      //   return current > largest ? current : largest;
+      // });
+
+      // console.log(max);
+
+      // // ------------------------------------------
+      // // 4. Create an array of 5 product objects
+      // // with name, price, category.
+      // // Use filter() to get products in category
+      // // "Electronics".
+      // // Then use map() to show only the names.
+      // // ------------------------------------------
+
+      // let products = [
+      //   { name: "Laptop", price: 55000, category: "Electronics" },
+      //   { name: "Shoes", price: 2500, category: "Fashion" },
+      //   { name: "Mobile", price: 30000, category: "Electronics" },
+      //   { name: "Book", price: 500, category: "Education" },
+      //   { name: "Headphones", price: 2000, category: "Electronics" },
+      // ];
+
+      // let electronicNames = products
+      //   .filter((product) => product.category === "Electronics")
+      //   .map((product) => product.name);
+
+      // console.log(electronicNames);
+
+      // // ------------------------------------------
+      // // 5. BONUS:
+      // // Use method chaining from an array of
+      // // student objects with name and marks.
+      // // Find the average marks of only those
+      // // who scored more than 50.
+      // // ------------------------------------------
+
+      // let students = [
+      //   { name: "Amit", marks: 45 },
+      //   { name: "Priya", marks: 80 },
+      //   { name: "Rahul", marks: 60 },
+      //   { name: "Sara", marks: 30 },
+      //   { name: "Neha", marks: 90 },
+      // ];
+
+      // let passedStudents = students.filter((student) => student.marks > 50);
+
+      // let average =
+      //   passedStudents
+      //     .map((student) => student.marks)
+      //     .reduce((sum, marks) => sum + marks, 0) / passedStudents.length;
+
+      // console.log(average);
+      // //5. BONUS: Method Chaining – Find the average marks of students scoring more than 50
+      // let students = [
+      //   { name: "Amit", marks: 70 },
+      //   { name: "Priya", marks: 85 },
+      //   { name: "Rahul", marks: 45 },
+      //   { name: "Sara", marks: 60 },
+      //   { name: "Neha", marks: 30 },
+      // ];
+
+      // let filteredStudents = students.filter((student) => student.marks > 50);
+
+      // let totalMarks = filteredStudents.reduce((sum, student) => {
+      //   return sum + student.marks;
+      // }, 0);
+
+      // let average = totalMarks / filteredStudents.length;
+
+      // console.log("Average Marks:", average);
+
       // -------------------------------------------------------------------------
+
+
+      // let department = [
+      //   { Dname: "IT", Dcode: 58, employees: [] },
+      //   { Dname: "HR", Dcode: 59, employees: [] },
+      //   { Dname: "Finance", Dcode: 60, employees: [] },
+      //   { Dname: "Marketing", Dcode: 61, employees: [] },
+      //   { Dname: "CEO", Dcode: 62, employees: [] },
+      // ];
+
+      //what to reduce the salary of each employee by 5 in from the IT department and print the updated array of employees in the IT department.
+
+      // console.log("Before Update : ");
+      // let BeforeUpdateITEmployees = arr.filter((emp) => emp.department === "IT");
+      // console.log(BeforeUpdateITEmployees);
+
+      // console.log("\nAfter Update : ");
+      // let updatedITEmployees = arr
+      //   .filter((emp) => emp.department === "IT")
+      //   .map((emp) => {
+      //     return {
+      //       Name: emp.name,
+      //       salary: emp.salary - 5,
+      //     };
+      //   })
+
+      // console.log(updatedITEmployees);
+
+
+      //-------------------------------------------------------------------------
+      let employees = [
+        {
+          name: "bhupendr",
+          salary: 70,
+          age: 50,
+          country: "india",
+          department: "IT",
+          content_liked: ["food", "Travel_Vlogs", "art", "storytelling"],
+          products_in_cart: [
+            { Pname: "Shirt", cost: 500 },
+            { Pname: "Shoes", cost: 2500 },
+            { Pname: "Watch", cost: 3500 },
+          ],
+        },
+        {
+          name: "rohan",
+          salary: 50,
+          age: 14,
+          country: "london",
+          department: "Finance",
+          content_liked: ["daily_vlogs", "science", "art", "motivational"],
+          products_in_cart: [
+            { Pname: "Shirt", cost: 500 },
+            { Pname: "Headphones", cost: 1800 },
+          ],
+        },
+        {
+          name: "kartik",
+          salary: 3,
+          age: 2,
+          country: "america",
+          department: "HR",
+          content_liked: ["sports", "politics", "online_gaming", "science"],
+          products_in_cart: [
+            { Pname: "Football", cost: 1200 },
+            { Pname: "Shoes", cost: 2500 },
+          ],
+        },
+        {
+          name: "suraj",
+          salary: 2,
+          age: 19,
+          country: "russia",
+          department: "Finance",
+          content_liked: ["Travel_Vlogs", "bike", "politics", "food"],
+          products_in_cart: [
+            { Pname: "Bike Helmet", cost: 2200 },
+            { Pname: "Watch", cost: 3500 },
+          ],
+        },
+        {
+          name: "aryan",
+          salary: 1,
+          age: 70,
+          country: "japan",
+          department: "HR",
+          content_liked: ["history", "motivational", "news", "science"],
+          products_in_cart: [
+            { Pname: "Books", cost: 900 },
+            { Pname: "Laptop", cost: 65000 },
+          ],
+        },
+        {
+          name: "aryan",
+          salary: 88,
+          age: 40,
+          country: "japan",
+          department: "IT",
+          content_liked: ["coding", "technology", "science", "art"],
+          products_in_cart: [
+            { Pname: "Laptop", cost: 65000 },
+            { Pname: "Mouse", cost: 700 },
+            { Pname: "Keyboard", cost: 1500 },
+          ],
+        },
+        {
+          name: "jatin",
+          salary: 100,
+          age: 12,
+          country: "russia",
+          department: "HR",
+          content_liked: ["gaming", "sports", "anime", "online_gaming"],
+          products_in_cart: [
+            { Pname: "Gaming Mouse", cost: 2200 },
+            { Pname: "Headphones", cost: 1800 },
+          ],
+        },
+        {
+          name: "aaditya",
+          salary: 20,
+          age: 19,
+          country: "india",
+          department: "Marketing",
+          content_liked: [
+            "marketing",
+            "business",
+            "motivational",
+            "storytelling",
+          ],
+          products_in_cart: [
+            { Pname: "Notebook", cost: 150 },
+            { Pname: "Pen", cost: 50 },
+            { Pname: "Shirt", cost: 500 },
+          ],
+        },
+        {
+          name: "sachi",
+          salary: 1,
+          age: 2,
+          country: "uganda",
+          department: "Finance",
+          content_liked: ["cartoons", "food", "science", "daily_vlogs"],
+          products_in_cart: [
+            { Pname: "Chocolate", cost: 100 },
+            { Pname: "Books", cost: 900 },
+          ],
+        },
+        {
+          name: "khushi",
+          salary: 35,
+          age: 99,
+          country: "brazil",
+          department: "IT",
+          content_liked: ["Travel_Vlogs", "dance", "food", "art"],
+          products_in_cart: [
+            { Pname: "Dress", cost: 1800 },
+            { Pname: "Watch", cost: 3500 },
+            { Pname: "Shoes", cost: 2500 },
+          ],
+        },
+        {
+          name: "parul",
+          salary: 500,
+          age: 34,
+          country: "jamaica",
+          department: "CEO",
+          content_liked: [
+            "leadership",
+            "business",
+            "technology",
+            "motivational",
+          ],
+          products_in_cart: [
+            { Pname: "Laptop", cost: 65000 },
+            { Pname: "Watch", cost: 3500 },
+            { Pname: "Phone", cost: 45000 },
+          ],
+        },
+      ];
+
+      //1. find how much average can spend by each employee in the products_in_cart array and print the average spend of each employee.
+
+      // employees.forEach((emp) =>{
+
+      //   let totalCost = emp.products_in_cart.reduce((sum, product) => sum + product.cost, 0);
+      //   let averageCost = totalCost / emp.products_in_cart.length;
+      //   cc.textContent += `The amount spent by "${emp.name}" right now is ₹${averageCost.toFixed(2)}/-\n\n`;
+      // })
+
+
+
+      //2. in every employee salary add two zeros like 70 should be 7000 and print the updated array of employees.
+
+      employees.forEach((emp) => {
+        emp.salary = emp.salary * 100;
+      });
+
+      //console.log(employees);
+
+      //3. every employee can spend of this 50% of salary and we have to check that can emplopees can bought the expensive product or not and print the result like "Employee can" or "Employee can't ".
+
+      // let canBuyArray = [];
+      // let cannotBuyArray = [];
+      // employees.forEach((emp) => {
+      //   let maxSpend = emp.salary * 0.5;
+      //   let expensiveProduct = emp.products_in_cart.reduce((max, product) => {
+      //     return product.cost > max ? product.cost : max;
+      //   }, 0);
+
+      //   if (expensiveProduct > maxSpend) {
+      //     cannotBuyArray.push(emp.name);
+      //   } else {
+      //     canBuyArray.push(emp.name);
+      //   }
+      // });
+
+      // console.log("Employees who can buy the product:", canBuyArray);
+      // console.log("Employees who can't buy the product:", cannotBuyArray);
+
+      // cc.textContent += `Employees who can buy the product: \n${canBuyArray.join(", ")}\n\n`;
+      // cc.textContent += `Employees who can't buy the product: \n${cannotBuyArray.join(", ")}\n\n`;
+
+      //4.make a array of Contnt liked by all employees and print the array of content liked by all employees. NOTE : need to remove the duplicate content liked by employees.
+
+      let uniqueContentLike = [ ...new Set(employees.flatMap((emp) => emp.content_liked))]; 
+      //console.log(uniqueContentLike);
+
+      // 5. Convert the array of uniquecontentliked in object by like at the first content like employee can spend of 1% and next lby 2% ans so on conent  "food" : 1% , "Travel_Vlogs" : 2% and so on and print the object.
+
+      let contentSpendObject = {};
+      uniqueContentLike.forEach((content, index) => {
+        contentSpendObject[content] = `${index + 1}%`;
+      })
+
+      console.log(contentSpendObject);
+
+      // 6. find and print the employee can spend in the content liked like first sum the all persentage of content liked by employee and so that will be the total percentage of salary that employee can spend and then reduce that much ammount of spending from the salary thn print that for every employee that how much we=ill be left :
+
+      employees.forEach((emp) => {
+        let totalPercentage = emp.content_liked.reduce((sum, content) => {
+          return sum + parseInt(contentSpendObject[content]);
+        }, 0); 
+        
+        let amountToSpend = (emp.salary * totalPercentage) / 100;
+        let remainingSalary = emp.salary - amountToSpend;
+        console.log(`${emp.name} (${emp.salary}) \n\tspend : ${amountToSpend}\n\twill be left  :${remainingSalary}\n\n`);
+      });
+
     </script>
   </body>
 </html>
