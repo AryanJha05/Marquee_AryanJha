@@ -1024,7 +1024,7 @@
         contentSpendObject[content] = `${index + 1}%`;
       })
 
-      console.log(contentSpendObject);
+      //console.log(contentSpendObject);
 
       // 6. find and print the employee can spend in the content liked like first sum the all persentage of content liked by employee and so that will be the total percentage of salary that employee can spend and then reduce that much ammount of spending from the salary thn print that for every employee that how much we=ill be left :
 
@@ -1035,8 +1035,74 @@
         
         let amountToSpend = (emp.salary * totalPercentage) / 100;
         let remainingSalary = emp.salary - amountToSpend;
-        console.log(`${emp.name} (${emp.salary}) \n\tspend : ${amountToSpend}\n\twill be left  :${remainingSalary}\n\n`);
+        //console.log(`${emp.name} (${emp.salary}) \n\tspend : ${amountToSpend}\n\twill be left  :${remainingSalary}\n\n`);
       });
+
+
+
+
+
+
+
+
+
+      //--------------------------------------------------------------
+
+
+      // Searching and Checking Elements in an Array:
+      let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      //find() : is used to find the first element in an array that satisfies a given condition. It returns the value of the first element that passes the test, or undefined if no elements pass.
+
+      console.log(array.find((num) => num > 9)); // Output: 6
+
+      //findIndex
+      console.log(array.findIndex((num) => num === 5)); // Output: 4
+
+      //Includes : is used to check if an array contains a specific element. It returns true if the element is found, and false otherwise.
+      console.log(array.includes(5)); // Output: true
+
+      //indexOf : is used to find the index of the first occurrence of a specified element in an array. It returns the index if found, or -1 if not found.
+      console.log(array.indexOf(5)); // Output: 4
+
+      //some : is used to check if at least one element in an array satisfies a given condition. It returns true if any element passes the test, and false otherwise.
+      console.log(array.some((num) => num > 9)); // Output: true
+
+
+
+
+      //----------
+
+      //Sorting :
+      array.sort((a, b) => a - b); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      console.log(array);
+
+      array.reverse(); // Output: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+      console.log(array);
+
+      //--------------
+      //Combining Arrays :
+
+
+      //Concat() : is used to merge two or more arrays into a new array. It does not modify the original arrays.
+      let array1 = [1, 2, 3];
+      let array2 = [4, 5, 6];
+
+      let combinedArray = array1.concat(array2); // Output: [1, 2, 3, 4, 5, 6]
+      console.log(combinedArray);
+
+      //join() : is used to join all elements of an array into a string, with a specified separator between each element.
+      let joinedString = combinedArray.join(", "); // Output: "1, 2, 3, 4, 5, 6"
+      console.log(joinedString);
+
+
+      //flat() : is used to flatten a nested array into a single-level array. It removes one level of nesting by default, but you can specify the depth to flatten.
+      let nestedArray = [1, [2, 3], [4, [5, 6, [7, 8]]]];
+      let flattenedArray = nestedArray.flat(3); // Output: [1, 2, 3, 4, 5, 6, 7, 8]
+      console.log(flattenedArray);
+
+      //-------------------------
+
+
 
     </script>
   </body>

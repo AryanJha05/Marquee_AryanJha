@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String in JavaScript</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        font-weight: bold;
+        background-color: black;
+        margin: 0;
+        padding: 20px;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .consoleContainer {
+        font-family: sans-serif;
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .consoleContainer .cc {
+        background-color: rgba(101, 100, 100, 0.367);
+        padding: 10px;
+        font-size: 18px;
+        color: whitesmoke;
+        font-weight: 1;
+        border-radius: 5px;
+        box-shadow: 1px 1px #ccc;
+        margin: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+
+      /* Scroll in .cc */
+      .consoleContainer .cc {
+        overflow-y: auto;
+        max-height: 100vh;
+      }
+
+      /* Responsive */
+
+      @media (max-width: 600px) {
+        .consoleContainer {
+          padding: 3px;
+          margin: 5px;
+        }
+        .consoleContainer .cc {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="consoleContainer">
+      <span
+        style="
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.799);
+          padding: 10px;
+          font-weight: 200;
+        "
+        >JavaScript logs will be printed here.....</span
+      >
+      <div class="cc"></div>
+    </div>
+
+    <script>
+      const cc = document.querySelector(".consoleContainer .cc");
+      //------------------------------------------------------------------
+      // 2D array :
+
+      let classroom = [
+        ["Rahul", "Aman", "Mohit"],
+        ["Neha", "Riya", "Pooja"],
+        ["Karan", "Ajay", "Ravi"],
+      ];
+
+      // //Print First Column of the 2D array :
+      // let firstColunm = classroom.map(row => row[0]);
+      // console.log(firstColunm);
+      //-----------------------------------------------
+
+      // //By forEach loop :
+      // let firstColunmForEach = [];
+      // classroom.forEach(row => {firstColunmForEach.push(row[0]);});
+      // console.log(firstColunmForEach);
+      //-----------------------------------------------
+
+      //   //Diagonal Names :
+      //   let diagonalNames = classroom.map((row, index) => row[index]);
+      //   console.log("Diagonal Names:", diagonalNames);
+
+      //   //Forward Diagonal Names :
+
+      //   let forwardDiagonalNames = classroom.map(
+      //     (row, index) => row[row.length - 1 - index],
+      //   );
+      //   console.log("Forward Diagonal Names:", forwardDiagonalNames);
+      //-----------------------------------------------
+
+      //   //Both Diagonal Names :
+      //   let bothDiagonalNames = [...diagonalNames, ...forwardDiagonalNames];
+      //   console.log("Both Diagonal Names:", bothDiagonalNames);
+      //-----------------------------------------------
+
+      //Nested Array :
+      const nested_employees = [
+        [
+          {
+            employee_id: "EMP101",
+
+            name: "Rahul",
+
+            salary: 55000,
+
+            age: 27,
+
+            country: "India",
+
+            department: 58,
+
+            interests: [
+              { technology: ["javascript", "nodejs"] },
+
+              { sports: ["cricket"] },
+
+              { music: ["guitar"] },
+
+              { self_growth: ["productivity"] },
+            ],
+
+            junior_assigned: ["JEMP201", "JEMP202", "JEMP203"],
+
+            products_in_cart: [
+              { Pname: "Laptop", cost: 70000 },
+
+              { Pname: "Keyboard", cost: 2500 },
+
+              { Pname: "Headphones", cost: 4500 },
+            ],
+          },
+
+          {
+            employee_id: "EMP102",
+
+            name: "Aman",
+
+            salary: 48000,
+
+            age: 25,
+
+            country: "India",
+
+            department: 158,
+
+            interests: [
+              { business: ["marketing"] },
+
+              { fitness: ["gym"] },
+
+              { technology: ["react"] },
+
+              { travel: ["mountains"] },
+            ],
+
+            junior_assigned: ["JEMP204", "JEMP205"],
+
+            products_in_cart: [
+              { Pname: "Phone", cost: 35000 },
+
+              { Pname: "Shoes", cost: 5000 },
+
+              { Pname: "Backpack", cost: 2000 },
+            ],
+          },
+
+          {
+            employee_id: "EMP103",
+
+            name: "Mohit",
+
+            salary: 62000,
+
+            age: 30,
+
+            country: "Canada",
+
+            department: 2,
+
+            interests: [
+              { technology: ["python", "django"] },
+
+              { gaming: ["fps"] },
+
+              { reading: ["fiction"] },
+
+              { finance: ["investing"] },
+            ],
+
+            junior_assigned: ["JEMP206"],
+
+            products_in_cart: [
+              { Pname: "Monitor", cost: 18000 },
+
+              { Pname: "Mouse", cost: 2500 },
+
+              { Pname: "SSD", cost: 7000 },
+            ],
+          },
+        ],
+
+        [
+          {
+            employee_id: "EMP104",
+
+            name: "Neha",
+
+            salary: 58000,
+
+            age: 28,
+
+            country: "India",
+
+            department: 48,
+
+            interests: [
+              { leadership: ["team_management"] },
+
+              { cooking: ["baking"] },
+
+              { technology: ["ui_design"] },
+
+              { self_growth: ["public_speaking"] },
+            ],
+
+            junior_assigned: ["JEMP207", "JEMP208"],
+
+            products_in_cart: [
+              { Pname: "iPad", cost: 55000 },
+
+              { Pname: "Stylus", cost: 9000 },
+
+              { Pname: "Bag", cost: 2500 },
+            ],
+          },
+
+          {
+            employee_id: "EMP105",
+
+            name: "Riya",
+
+            salary: 52000,
+
+            age: 26,
+
+            country: "Australia",
+
+            department: 44,
+
+            interests: [
+              { photography: ["nature"] },
+
+              { technology: ["figma"] },
+
+              { fashion: ["design"] },
+
+              { travel: ["beaches"] },
+            ],
+
+            junior_assigned: ["JEMP209", "JEMP210"],
+
+            products_in_cart: [
+              { Pname: "Camera", cost: 85000 },
+
+              { Pname: "Tripod", cost: 4000 },
+
+              { Pname: "Memory Card", cost: 2500 },
+            ],
+          },
+
+          {
+            employee_id: "EMP106",
+
+            name: "Pooja",
+
+            salary: 47000,
+
+            age: 24,
+
+            country: "India",
+
+            department: 158,
+
+            interests: [
+              { art: ["painting"] },
+
+              { technology: ["css", "html"] },
+
+              { music: ["singing"] },
+
+              { business: ["sales"] },
+            ],
+
+            junior_assigned: ["JEMP211"],
+
+            products_in_cart: [
+              { Pname: "Tablet", cost: 30000 },
+
+              { Pname: "Earbuds", cost: 3500 },
+
+              { Pname: "Notebook", cost: 500 },
+            ],
+          },
+        ],
+
+        [
+          {
+            employee_id: "EMP107",
+
+            name: "Karan",
+
+            salary: 68000,
+
+            age: 31,
+
+            country: "Germany",
+
+            department: 2,
+
+            interests: [
+              { technology: ["aws", "docker"] },
+
+              { finance: ["stocks"] },
+
+              { leadership: ["mentoring"] },
+
+              { fitness: ["cycling"] },
+            ],
+
+            junior_assigned: ["JEMP212", "JEMP213"],
+
+            products_in_cart: [
+              { Pname: "MacBook", cost: 145000 },
+
+              { Pname: "Magic Mouse", cost: 7000 },
+
+              { Pname: "USB Hub", cost: 2500 },
+            ],
+          },
+
+          {
+            employee_id: "EMP108",
+
+            name: "Ajay",
+
+            salary: 51000,
+
+            age: 29,
+
+            country: "India",
+
+            department: 58,
+
+            interests: [
+              { sports: ["football"] },
+
+              { technology: ["mongodb"] },
+
+              { reading: ["history"] },
+
+              { movies: ["action"] },
+            ],
+
+            junior_assigned: ["JEMP214", "JEMP215"],
+
+            products_in_cart: [
+              { Pname: "Smart Watch", cost: 15000 },
+
+              { Pname: "Shoes", cost: 4500 },
+
+              { Pname: "Jacket", cost: 3500 },
+            ],
+          },
+
+          {
+            employee_id: "EMP109",
+
+            name: "Pulkit",
+
+            salary: 75000,
+
+            age: 25,
+
+            country: "India",
+
+            department: 58,
+
+            interests: [
+              { technology: ["mern", "nodejs", "react"] },
+
+              { self_growth: ["motivational", "books"] },
+
+              { music: ["instruments"] },
+
+              { travel: ["road_trips"] },
+            ],
+
+            junior_assigned: ["JEMP216", "JEMP217", "JEMP218", "JEMP219"],
+
+            products_in_cart: [
+              { Pname: "Gaming Laptop", cost: 95000 },
+
+              { Pname: "Mechanical Keyboard", cost: 6500 },
+
+              { Pname: "Monitor", cost: 22000 },
+            ],
+          },
+        ],
+      ];
+
+      let departments = [
+        { Dname: "IT", Dcode: 58 },
+        { Dname: "Finance", Dcode: 158 },
+        { Dname: "HR", Dcode: 48 },
+        { Dname: "Marketing", Dcode: 44 },
+        { Dname: "CEO", Dcode: 2 },
+      ];
+
+      let junior_employees = [
+        {
+          employee_id: "JEMP201",
+          name: "rahul",
+          salary: 1800,
+          age: 21,
+          country: "india",
+          department: 158,
+          interests: [{ vlogs: ["travel_vlogs"] }, { learning: ["science"] }],
+          products_in_cart: [{ Pname: "Bag", cost: 900 }],
+        },
+        {
+          employee_id: "JEMP202",
+          name: "neha",
+          salary: 2000,
+          age: 22,
+          country: "india",
+          department: 158,
+          interests: [{ food: ["food"] }, { creativity: ["art"] }],
+          products_in_cart: [{ Pname: "Shoes", cost: 1500 }],
+        },
+        {
+          employee_id: "JEMP203",
+          name: "aman",
+          salary: 2200,
+          age: 24,
+          country: "india",
+          department: 58,
+          interests: [{ coding: ["coding"] }, { technology: ["technology"] }],
+          products_in_cart: [{ Pname: "Keyboard", cost: 1200 }],
+        },
+        {
+          employee_id: "JEMP204",
+          name: "riya",
+          salary: 1700,
+          age: 20,
+          country: "india",
+          department: 48,
+          interests: [{ gaming: ["online_gaming"] }],
+          products_in_cart: [{ Pname: "Football", cost: 900 }],
+        },
+        {
+          employee_id: "JEMP205",
+          name: "vivek",
+          salary: 2100,
+          age: 23,
+          country: "india",
+          department: 48,
+          interests: [{ sports: ["sports"] }],
+          products_in_cart: [{ Pname: "Shoes", cost: 1800 }],
+        },
+        {
+          employee_id: "JEMP206",
+          name: "karan",
+          salary: 2300,
+          age: 24,
+          country: "russia",
+          department: 158,
+          interests: [{ vehicles: ["bike"] }],
+          products_in_cart: [{ Pname: "Helmet", cost: 1200 }],
+        },
+        {
+          employee_id: "JEMP207",
+          name: "simran",
+          salary: 2500,
+          age: 22,
+          country: "japan",
+          department: 48,
+          interests: [{ history: ["history"] }],
+          products_in_cart: [{ Pname: "Books", cost: 700 }],
+        },
+        {
+          employee_id: "JEMP208",
+          name: "mohit",
+          salary: 2400,
+          age: 23,
+          country: "india",
+          department: 48,
+          interests: [{ learning: ["science"] }],
+          products_in_cart: [{ Pname: "Notebook", cost: 150 }],
+        },
+        {
+          employee_id: "JEMP209",
+          name: "anjali",
+          salary: 2600,
+          age: 22,
+          country: "india",
+          department: 48,
+          interests: [{ self_growth: ["motivational"] }],
+          products_in_cart: [{ Pname: "Watch", cost: 2000 }],
+        },
+        {
+          employee_id: "JEMP210",
+          name: "rohit",
+          salary: 2800,
+          age: 25,
+          country: "india",
+          department: 58,
+          interests: [{ coding: ["coding"] }],
+          products_in_cart: [{ Pname: "Mouse", cost: 800 }],
+        },
+        {
+          employee_id: "JEMP211",
+          name: "deep",
+          salary: 1800,
+          age: 21,
+          country: "india",
+          department: 48,
+          interests: [{ gaming: ["gaming"] }],
+          products_in_cart: [{ Pname: "Headphones", cost: 1800 }],
+        },
+        {
+          employee_id: "JEMP212",
+          name: "priya",
+          salary: 1900,
+          age: 21,
+          country: "india",
+          department: 48,
+          interests: [{ anime: ["anime"] }],
+          products_in_cart: [{ Pname: "Books", cost: 500 }],
+        },
+        {
+          employee_id: "JEMP213",
+          name: "harsh",
+          salary: 2000,
+          age: 23,
+          country: "india",
+          department: 44,
+          interests: [{ business: ["marketing"] }],
+          products_in_cart: [{ Pname: "Notebook", cost: 200 }],
+        },
+        {
+          employee_id: "JEMP214",
+          name: "isha",
+          salary: 1700,
+          age: 20,
+          country: "uganda",
+          department: 158,
+          interests: [{ fun: ["cartoons"] }],
+          products_in_cart: [{ Pname: "Chocolate", cost: 100 }],
+        },
+        {
+          employee_id: "JEMP215",
+          name: "nikhil",
+          salary: 2100,
+          age: 24,
+          country: "brazil",
+          department: 58,
+          interests: [{ dance: ["dance"] }],
+          products_in_cart: [{ Pname: "Shoes", cost: 1700 }],
+        },
+        {
+          employee_id: "JEMP216",
+          name: "megha",
+          salary: 2200,
+          age: 23,
+          country: "brazil",
+          department: 58,
+          interests: [{ food: ["food"] }],
+          products_in_cart: [{ Pname: "Dress", cost: 1800 }],
+        },
+        {
+          employee_id: "JEMP217",
+          name: "abhishek",
+          salary: 3000,
+          age: 26,
+          country: "jamaica",
+          department: 2,
+          interests: [{ leadership: ["leadership"] }],
+          products_in_cart: [{ Pname: "Laptop Bag", cost: 2000 }],
+        },
+        {
+          employee_id: "JEMP218",
+          name: "kiran",
+          salary: 3200,
+          age: 27,
+          country: "jamaica",
+          department: 2,
+          interests: [{ business: ["business"] }],
+          products_in_cart: [{ Pname: "Phone", cost: 25000 }],
+        },
+        {
+          employee_id: "JEMP219",
+          name: "sonia",
+          salary: 3100,
+          age: 25,
+          country: "jamaica",
+          department: 2,
+          interests: [{ technology: ["technology"] }],
+          products_in_cart: [{ Pname: "Watch", cost: 3000 }],
+        },
+      ];
+
+      //QUESTION :
+
+      //1. Retrive Print All Employee name form the IT department :
+
+      let ITDepartmentCODE = departments.find(
+        (dept) => dept.Dname === "IT",
+      ).Dcode;
+      let itEmployees = nested_employees
+        .flat()
+        .filter((emp) => emp.department === ITDepartmentCODE)
+        .map((emp) => emp.name);
+      //console.log("IT Department Employees:", itEmployees);
+
+      //2. All the juniors have to donate, so there donation amount is depending on their the length of the his name(junior) and plus the length of the senior name, like Senior name length + Junior name length = Donation amount percentage , so calculate  for each of the juniors of the employee print there name and donation amount percentage and amount :
+
+      let DonationDetails = [];
+
+      nested_employees.forEach((seniorGroup) => {
+        seniorGroup.forEach((senior) => {
+          let seniorNameLength = senior.name.length;
+          senior.junior_assigned.forEach((juniorId) => {
+            let junior = junior_employees.find(
+              (j) => j.employee_id === juniorId,
+            );
+            if (junior) {
+              let juniorNameLength = junior.name.length;
+              let donationPercentage = seniorNameLength + juniorNameLength;
+              let donationAmount = (donationPercentage / 100) * junior.salary;
+              DonationDetails.push({
+                jName: junior.name,
+                sName: senior.name,
+                donationPerc: donationPercentage,
+                donationAmt: donationAmount,
+              });
+            }
+          });
+        });
+      });
+      //console.log("Donation Details:\n", DonationDetails);
+
+      //Optimize the above code using map and reduce methods to calculate the donation details for each junior employee based on their senior's name length and their own name length:
+
+      let optimizedDonationDetails = nested_employees.flat().map((senior) => {
+        let seniorNameLength = senior.name.length;
+        return senior.junior_assigned.map((juniorId) => {
+          let junior = junior_employees.find((j) => j.employee_id === juniorId);
+          if (junior) {
+            let juniorNameLength = junior.name.length;
+            let donationPercentage = seniorNameLength + juniorNameLength;
+            let donationAmount = (donationPercentage / 100) * junior.salary;
+            return {
+              jName: junior.name,
+              sName: senior.name,
+              donationPerc: donationPercentage,
+              donationAmt: donationAmount,
+            };
+          }
+        });
+      });
+
+      //console.log("\nOptimized Donation Details:\n", optimizedDonationDetails.flat(),);
+
+      //-----------------------------------------------------------------------------------
+
+      // //Array Destructuring :
+
+      // //normal Way:
+      // let colors = ["red", "green", "blue"];
+      // let first = colors[0];
+      // let second = colors[1];
+      // let third = colors[2];
+
+      // console.log("Normal Way:", first, second, third);
+
+      // //destructuring Way:
+      // let [firstDestructured, secondDestructured, thirdDestructured] = colors;
+      // console.log("Destructuring Way:", firstDestructured, secondDestructured, thirdDestructured);
+
+      // //skip values
+
+      // let [firstColor, , thirdColor] = colors;
+      // console.log("Skip Values:", firstColor, thirdColor);
+
+      // //default values
+      // let [firstColorDefault, secondColorDefault, thirdColorDefault, fourthColorDefault = "yellow"] = colors;
+      // console.log("Default Values:", firstColorDefault, secondColorDefault, thirdColorDefault, fourthColorDefault);
+
+      // //Spread Operator :
+      // let moreColors = ["orange", "purple"];
+      // let allColors = [...colors, ...moreColors];
+      // console.log("All Colors:", allColors);
+      // //spread operator se jo copy karte hai wo shallow copy hota hai, matlab agar original array ke andar koi object hai to uska reference copy hota hai, na ki object ka actual value copy hota hai.
+      // //or deeep copy matlab original array ke andar koi object hai to uska actual value copy hota hai, na ki reference copy hota hai.
+      // let deepCopyColors = JSON.parse(JSON.stringify(colors));
+      // console.log("Deep Copy Colors:", deepCopyColors);
+
+      //--------------------------------------------------------------
+
+      //Rest Operator :
+
+      // let students = ["Rahul", "pulkit", "megha", "neha", "gungun"];
+      // console.log("Students:", students);
+
+      // let [a1, b1, c, d, e] = students;
+      // console.log("Destructured Students:", a1, b1, c, d, e);
+
+      // let [a2, b2, ...baki_bache_element] = students;
+      // console.log("Rest Operator:", a2, b2, baki_bache_element);
+
+      //--------------------------------------------------------------
+
+      // //Object Destructuring :
+
+      // let stuObj = {
+      //   name: "Aryn",
+      //   age: 20,
+      //   major: "CS",
+      // };
+
+      // let { age, name, major } = stuObj;
+      // console.log("Object Destructuring:", name, age, major);
+
+      // //Renameing variables
+      // let { name: studentName, age: studentAge, major: studentMajor } = stuObj;
+      // console.log("Renamed Variables:", studentName, studentAge, studentMajor);
+      // console.log("Original Object:", stuObj);
+
+      // //Nested Object Destructuring :
+      // let employee = {
+      //   id: 101,
+      //   name: "Rahul",
+      //   address: {
+      //     street: "123 Main St",
+      //     city: "New York",
+      //     country: "USA",
+      //   },
+      // };
+      // let {
+      //   name: empName,
+      //   address: { city: empCity, country: empCountry },
+      // } = employee;
+
+      // console.log("\nEmployee Name:", empName);
+      // console.log("Employee City:", empCity);
+      // console.log("Employee Country:", empCountry);
+
+      // //JSON - JavaScript Object Notation : is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is often used to transmit data between a server and a web application as text.
+
+      // let JSONObj = {
+      //   "name" : "Rahul",
+      //   "age" : 25,
+      //   'address' : {
+      //     "street" : "123 Main St",
+      //     "city" : "New York",
+      //     "country" : "USA"
+      //   },
+      // }
+
+      // //Object to JSON Stringify : JSON.stringify() method converts a JavaScript object or value to a JSON string.
+      // let employeeJSON = JSON.stringify(JSONObj);
+
+      // console.log("\nJSON Object:", JSONObj);
+      // console.log("JSON Type:", typeof JSONObj);
+      // console.log("\nJSON Stringify:", employeeJSON);
+      // console.log("JSON Stringify Type:", typeof employeeJSON);
+
+      // //JSON Stringify to Object : JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string.
+
+      // let employeeObj = JSON.parse(employeeJSON);
+      // console.log("\nJSON Stringify to Object:", employeeObj);
+      // console.log("JSON Stringify to Object Type:", typeof employeeObj);
+
+      // //Optional Chaining : Optional chaining is a feature in JavaScript that allows you to safely access nested properties of an object without having to check if each property in the chain exists. It uses the ?. operator to short-circuit the evaluation if any property in the chain is null or undefined.
+
+      // let employee = {
+      //   name: "Rahul",
+      //   address: {
+      //     street: "123 Main St",
+      //     city: "New York",
+      //     country: "USA",
+      //   },
+      // };
+
+      // //Without Optional Chaining :
+      // let employeeCountryWithoutOptionalChaining = employee.address.country;
+      // console.log("\nEmployee Country Without Optional Chaining:", employeeCountryWithoutOptionalChaining);
+
+      // //With Optional Chaining :
+      // let employeeCountryWithOptionalChaining = employee?.address?.country;
+      // console.log("Employee Country With Optional Chaining:", employeeCountryWithOptionalChaining);
+
+      //--------------------------------------------------------------
+
+      //Question :
+
+      //1. if the employee(Senior And Junior) is from IT department then calculate the total products bought by the employees of IT department and also calculate the total amount spent by the employees of IT department.
+
+      // console.log(nested_employees);
+
+      let ITDepartmentProductsBought = {};
+      let totalProductsBought = 0;
+      let totalAmountSpent = 0;
+      // Seniors
+      nested_employees.flat().forEach((senior) => {
+        if (senior.department === 58) {
+          senior.products_in_cart.forEach((product) => {
+            totalAmountSpent += product.cost;
+            if (ITDepartmentProductsBought[product.Pname]) {
+              ITDepartmentProductsBought[product.Pname] += 1;
+            } else {
+              ITDepartmentProductsBought[product.Pname] = 1;
+            }
+          });
+        }
+      });
+      // Juniors
+      junior_employees.forEach((junior) => {
+        if (junior.department === 58) {
+          junior.products_in_cart.forEach((product) => {
+            totalAmountSpent += product.cost;
+            if (ITDepartmentProductsBought[product.Pname]) {
+              ITDepartmentProductsBought[product.Pname] += 1;
+            } else {
+              ITDepartmentProductsBought[product.Pname] = 1;
+            }
+          });
+        }
+      });
+
+      // console.log("IT Department Products Bought:", ITDepartmentProductsBought);
+      // console.log(
+      //   "Total Unique Products Bought in IT Department:",
+      //   Object.keys(ITDepartmentProductsBought).length,
+      // );
+      // console.log("Total Amount Spent by IT Department:", totalAmountSpent);
+
+      //Optimized way using reduce method :
+      let optimizedITDepartmentProductsBought = nested_employees
+        .flat()
+        .filter((senior) => senior.department === 58)
+        .reduce(
+          (acc, senior) => {
+            senior.products_in_cart.forEach((product) => {
+              acc.totalAmountSpent += product.cost;
+              if (acc.products[product.Pname]) {
+                acc.products[product.Pname] += 1;
+              } else {
+                acc.products[product.Pname] = 1;
+              }
+            });
+            return acc;
+          },
+          { products: {}, totalAmountSpent: 0 },
+        );
+
+      let optimizedITDepartmentProductsBoughtJuniors = junior_employees
+        .filter((junior) => junior.department === 58)
+        .reduce(
+          (acc, junior) => {
+            junior.products_in_cart.forEach((product) => {
+              acc.totalAmountSpent += product.cost;
+              if (acc.products[product.Pname]) {
+                acc.products[product.Pname] += 1;
+              } else {
+                acc.products[product.Pname] = 1;
+              }
+            });
+            return acc;
+          },
+          { products: {}, totalAmountSpent: 0 },
+        );
+
+      let finalOptimizedITDepartmentProductsBought = {
+        products: {
+          ...optimizedITDepartmentProductsBought.products,
+          ...optimizedITDepartmentProductsBoughtJuniors.products,
+        },
+        totalAmountSpent:
+          optimizedITDepartmentProductsBought.totalAmountSpent +
+          optimizedITDepartmentProductsBoughtJuniors.totalAmountSpent,
+      };
+
+      // console.log(
+      //   "\n---------------------------------------------------\nOptimized IT Department Products Bought:",
+      //   finalOptimizedITDepartmentProductsBought.products,
+      // );
+      // console.log(
+      //   "Total Unique Products Bought in IT Department:",
+      //   Object.keys(finalOptimizedITDepartmentProductsBought.products).length,
+      // );
+      // console.log(
+      //   "Total Amount Spent by IT Department:",
+      //   finalOptimizedITDepartmentProductsBought.totalAmountSpent,
+      // );
+
+      //------------------------------------------------------------------
+
+      //2. in nested_employees array(senior employees) they have there assigned juniors id , but in junior employees array they doesnt have there assigned senior id, so we have to update the junior employees array with there assigned senior id, so that we can easily find the senior of any junior employee.
+
+      junior_employees.forEach((junior) => {
+        let senior = nested_employees
+          .flat()
+          .find((senior) =>
+            senior.junior_assigned.includes(junior.employee_id),
+          );
+        if (senior) {
+          junior.senior_id = senior.employee_id;
+        }
+      });
+
+      // console.log(
+      //   "\n---------------------------------------------------------------------------\nUpdated Junior Employees with Senior ID (Inplace Update):",
+      //   junior_employees,"\n---------------------------------------------------------------------------\n"
+      // );
+
+      //-----------------------------------------------------------------
+
+      //Computed Property Names : Computed property names are a feature in JavaScript that allows you to use an expression as the name of a property in an object literal. This means that you can dynamically compute the property name based on a variable or an expression, rather than using a fixed string.
+      let myName = "Aryan";
+
+      let employeeObj = {
+        [myName]: "Aryan2",
+        department: 58,
+      };
+      // console.log("Employee Object:", employeeObj);
+
+      //-----------------------------------------------------------------
+      //prototype chain : The prototype chain is a mechanism in JavaScript that allows objects to inherit properties and methods from other objects. Every object in JavaScript has an internal property called [[Prototype]], which points to another object. When you try to access a property or method on an object, JavaScript first looks for it on the object itself. If it doesn't find it there, it looks up the prototype chain until it finds the property or reaches the end of the chain (null).
+
+
+      let employee = {
+        name: "Aryan",
+        age: 20,
+        phone: 9023404715,
+        email: "aryan42006@gmail.com",
+      };
+
+      let address = {
+        city: "Limda",
+        pincode: 391520,
+        district: "Vadodara",
+      };
+
+      let employement = {
+        company: "MANGO",
+        package: 906885,
+        designation: "Software Developer",
+      };
+
+      //Prototype Chain :
+      employee.__proto__ = address;
+      employee.__proto__.__proto__= employement;
+
+      // console.log(employee);
+
+      //to remove any property from the prototype chain we can use delete operator :
+      delete employee.__proto__.city;
+
+      //Scope Chain : The scope chain is a mechanism in JavaScript that determines the accessibility of variables and functions in different parts of the code. It defines the order in which the JavaScript engine looks for variables and functions when they are referenced. The scope chain is created by the nested structure of functions and blocks, where each function or block creates its own scope.
+
+      //to delete  the prototype chain :
+      Object.setPrototypeOf(employee, null);
+      
+      // console.log(employee);
+
+      // console.log(employee.city); //undefined
+      // console.log(employee.company); //undefined
+
+
+      //Structured Clone : The structured clone algorithm is a method in JavaScript that allows you to create a deep copy of an object or value, including its nested properties and references. It is used to create a new object that is independent of the original object, meaning that changes made to the new object do not affect the original object and vice versa. The structured clone algorithm can handle various data types, including objects, arrays, maps, sets, and more.
+
+      // let work = {
+      //   company :  " Google",
+      //   package :  60,
+      //   key3 : undefined,
+      //   key4 : 8878,
+      // }
+
+      // let copy1 = JSON.parse(JSON.stringify(work));
+      // console.log("Copy1:", copy1);
+      // let copy2 = structuredClone(work);
+      // console.log("Copy2:", copy2);
+
+      //--------------------------------------------------------------
+    </script>
+  </body>
+</html>
