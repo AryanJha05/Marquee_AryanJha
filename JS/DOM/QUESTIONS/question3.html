@@ -608,7 +608,7 @@
           <td>${employee.salary}</td>
           <td>${employee.age}</td>
           <td>${employee.country}</td>
-          <td>${employee.department}</td>
+          <td>${departments.find((dept) => dept.Dcode === employee.department)?.Dname || "N/A"}</td>
 
         `;
         tableBody.appendChild(row);
