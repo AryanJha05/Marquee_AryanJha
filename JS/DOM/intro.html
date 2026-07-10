@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM in JavaScript</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        font-weight: bold;
+        background-color: black;
+        margin: 0;
+        padding: 20px;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .consoleContainer {
+        font-family: sans-serif;
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .consoleContainer .cc {
+        background-color: rgba(101, 100, 100, 0.367);
+        padding: 10px;
+        font-size: 18px;
+        color: whitesmoke;
+        font-weight: 1;
+        border-radius: 5px;
+        box-shadow: 1px 1px #ccc;
+        margin: 10px;
+        font-family: monospace;
+        white-space: pre-wrap;
+      }
+
+      /* Scroll in .cc */
+      .consoleContainer .cc {
+        overflow-y: auto;
+        max-height: 100vh;
+      }
+
+      /* Responsive */
+
+      @media (max-width: 600px) {
+        .consoleContainer {
+          padding: 3px;
+          margin: 5px;
+        }
+        .consoleContainer .cc {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="consoleContainer">
+      <span
+        style="
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.799);
+          padding: 10px;
+          font-weight: 200;
+        "
+        >JavaScript logs will be printed here.....</span
+      >
+      <div class="cc">Default Content....</div>
+    </div>
+
+    <script>
+      //------------------------------------------------------------------
+      // DOM - Document Object Model
+      // DOM is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+      // The Document Object Model (DOM) is a cross-platform and language-independent interface that treats an XML or HTML document as a tree structure wherein each node is an object representing a part of the document.
+
+      //------------------------------------------------------------------
+      const cc = document.querySelector(".cc");
+      cc.innerHTML = "Hello, World!";
+
+      //   console.log(cc);
+
+      //------------------------------------------------------------------
+
+      //getElementByTagName() - returns a live HTMLCollection of elements with the given tag name.
+      const h1 = document.getElementsByTagName("h1");
+      console.log(h1);
+
+      //getElementById() - returns the element that has the ID attribute with the specified value.
+      const h1Id = document.getElementById("h1");
+      console.log(h1Id);
+
+      //getElementsByClassName() - returns a live HTMLCollection of elements with the given class name.
+      const h1Class = document.getElementsByClassName("h1");
+      console.log(h1Class);
+
+      //querySelector() - returns the first element that matches a specified CSS selector(s) in the document.
+      const h1Query = document.querySelector("h1");
+      console.log(h1Query);
+
+      //querySelectorAll() - returns a static NodeList of all elements that match a specified CSS selector(s) in the document.
+      const h1QueryAll = document.querySelectorAll("h1");
+      console.log(h1QueryAll);
+
+      //------------------------------------------------------------------
+
+      //Diffrence Between innerHTML, innerText, textContent, outerHTML:
+      //innerHTML - returns the HTML content of an element as a string.
+      //innerText - returns the visible text content of an element as a string.
+      //textContent - returns the text content of an element and its descendants as a string.
+      //outerHTML - returns the HTML content of an element, including the element itself, as a string.
+
+      //------------------------------------------------------------------
+
+      //Diffrence Betwen HTMLCollection and NodeList:
+      //HTMLCollection - is a live collection of elements in the document. It is updated automatically when the document changes.
+      //NodeList - is a static collection of nodes in the document. It is not updated automatically when the document changes.
+
+
+
+    </script>
+  </body>
+</html>
