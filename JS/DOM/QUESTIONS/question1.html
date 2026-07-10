@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Animated Box</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background-color: black;
+        padding: 20px;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: 2s ease;
+      }
+
+      /* Horizontal Wheel */
+      .wheel1 {
+        width: 75px;
+        height: 2.5px;
+        background-color: black;
+        border-radius: 50%;
+      }
+
+      /* Vertical Wheel */
+      .wheel2 {
+        width: 2.5px;
+        height: 75px;
+        background-color: black;
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      /* Spin Animation */
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <!-- Horizontal Wheel -->
+      <div class="wheel1"></div>
+
+      <!-- Vertical Wheel -->
+      <div class="wheel2"></div>
+    </div>
+
+    <script>
+      // Select box
+      const box = document.getElementById("box");
+
+      // Wait 1 second
+      setTimeout(() => {
+        // Increase size
+        box.style.height = "250px";
+        box.style.width = "50px";
+
+        // Rotate box
+        box.style.transform = "rotate(90deg)";
+
+        // Change shape
+        box.style.borderRadius = "100% 0% 100% 0%";
+
+        // Wait another 500ms
+        setTimeout(() => {
+          // Change background
+          box.style.background = "radial-gradient(circle, rgba(0,225,150,1) 0%, rgba(0,255,0,1) 100%)";
+
+          // Start infinite rotation
+          box.style.animation = "spin 0.05s linear infinite";
+        }, 100);
+
+        box.style.transition = "all 0.5s ease";
+      }, 1000);
+
+      //-----------------------------------------------------------------------------
+
+      console.dir(box);
+    </script>
+  </body>
+</html>

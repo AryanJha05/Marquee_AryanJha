@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: black;
+            padding: 20px;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #listBox {
+            background-color: #333;
+            padding: 50px;
+            border-radius: 5px;
+
+        }
+
+        #listBox ul {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- List Box -->
+    <div id="listBox">
+        <ul>
+            
+        </ul>
+    </div>
+
+    <script>
+
+        //By taking user input and adding using prompt the names in the list box, 
+        // Select the list box
+        const listBox = document.getElementById("listBox");
+
+        // Create a new list item
+        const ul = listBox.querySelector("ul");
+
+        // Loop to take user input and add to the list
+        for (let i = 0; i < 5; i++) {
+            const name = prompt("Enter a name:");
+            const li = document.createElement("li");
+            li.textContent = name;
+            
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+</html>
